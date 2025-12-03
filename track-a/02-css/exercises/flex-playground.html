@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Flexbox Playground</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+
+      /* The Container */
+      .container {
+        display: flex; /* Magic starts here */
+        border: 5px solid #333;
+        height: 300px; /* Needed for align-items to do anything */
+        gap: 10px; /* Space between items */
+        padding: 10px;
+        margin-bottom: 50px;
+      }
+
+      /* The Items */
+      .item {
+        width: 100px;
+        height: 100px;
+        background: orange;
+        display: flex;
+        justify-content: center; /* Center text inside box */
+        align-items: center; /* Center text inside box */
+        font-weight: bold;
+        font-size: 24px;
+      }
+
+      /* 1. Row Layout (Default) */
+      .row-layout {
+        flex-direction: row;
+        justify-content: space-between; /* X-axis spread */
+        align-items: center; /* Y-axis center */
+      }
+
+      /* 2. Column Layout (Axes Flipped!) */
+      .col-layout {
+        flex-direction: column;
+        justify-content: center; /* Y-axis center now! */
+        align-items: flex-end; /* X-axis end now! */
+      }
+
+      /* 3. Flex Grow */
+      .grow-layout .item {
+        flex: 1; /* All grow evenly */
+      }
+      .grow-layout .big {
+        flex: 2; /* Grows 2x faster */
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>1. Row (Justify: Between, Align: Center)</h2>
+    <div class="container row-layout">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+
+    <h2>2. Column (Justify: Center, Align: End)</h2>
+    <div class="container col-layout">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+
+    <h2>3. Flex Grow</h2>
+    <div class="container grow-layout" style="height: auto">
+      <div class="item">1</div>
+      <div class="item big">2 (Big)</div>
+      <div class="item">3</div>
+    </div>
+  </body>
+</html>
