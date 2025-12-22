@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+.calculator {
+  background: #0f0f23;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  min-width: 320px;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background: #1a1a2e;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4ecca3;
+}
+
+.operators {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.operator {
+  padding: 15px;
+  font-size: 24px;
+  border: none;
+  border-radius: 10px;
+  background: #4ecca3;
+  color: #0f0f23;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.operator:hover {
+  background: #3db892;
+  transform: scale(1.05);
+}
+
+.operator:active {
+  transform: scale(0.95);
+}
+
+.result {
+  margin-top: 20px;
+  padding: 20px;
+  background: #1a1a2e;
+  border-radius: 10px;
+  border: 2px solid #333;
+}
+
+#result {
+  color: #4ecca3;
+  font-size: 24px;
+  font-weight: bold;
+}
