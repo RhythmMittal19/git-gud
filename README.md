@@ -1167,7 +1167,7 @@ git-gud/
 
 _"The expert in anything was once a beginner. The master has failed more times than the beginner has tried."_
 
-**Started:** January 2026
+**Started:** January 2026\
 **Destination:** Irreplaceable Developer
 
 
