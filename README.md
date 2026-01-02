@@ -1164,12 +1164,19 @@ git-gud/
 - [x] Semantic HTML
 - [x] Visual reference demos created
 
-#### Week 3 — CSS Mastery (Current)
+#### Week 3 — CSS Mastery ✅
 
-- [ ] Selectors & Specificity
-- [ ] Box Model
-- [ ] Flexbox & Grid
-- [ ] Typography & Colors
+- [x] Selectors & Specificity
+- [x] Box Model
+- [x] Flexbox & Grid
+- [x] Responsive Design & Media Queries
+- [x] Visual reference demos created
+
+#### Week 4 — Projects (Current)
+
+- [ ] Personal Website
+- [ ] Landing Page
+- [ ] Photo Gallery
 
 ---
 

@@ -84,10 +84,10 @@ text
 ## 📋 Track A Completion Checklist
 
 ```text
-□ Month 01-02: HTML & CSS
-□ HTML fundamentals
-□ CSS fundamentals
-□ Responsive design
+✅ Month 01-02: HTML & CSS
+✅ HTML fundamentals
+✅ CSS fundamentals
+✅ Responsive design
 □ 4 projects completed
 
 □ Month 03-04: JavaScript

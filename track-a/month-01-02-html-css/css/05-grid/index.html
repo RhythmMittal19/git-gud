@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05 - CSS Grid</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- TOP NAVIGATION -->
+    <nav class="demo-nav">
+      <a href="../01-selectors-specificity/index.html">01 Selectors</a>
+      <a href="../02-box-model/index.html">02 Box Model</a>
+      <a href="../03-display-positioning/index.html">03 Display</a>
+      <a href="../04-flexbox/index.html">04 Flexbox</a>
+      <a href="#" class="active">05 Grid</a>
+      <a href="../06-typography-colors/index.html">06 Type</a>
+      <a href="../07-transitions-animations/index.html">07 Animation</a>
+      <a href="../08-responsive-design/index.html">08 Responsive</a>
+      <a href="../09-css-variables/index.html">09 Variables</a>
+    </nav>
+
+    <h1>CSS Grid Layout</h1>
+    <p class="intro">A two-dimensional layout system for columns and rows.</p>
+
+    <div class="container">
+      <h2>1. Basic Grid (3 Columns)</h2>
+      <p><code>grid-template-columns: 1fr 1fr 1fr;</code></p>
+      <div class="grid-container grid-basic">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>2. Explicit Sizing</h2>
+      <p><code>grid-template-columns: 100px 2fr 1fr;</code></p>
+      <div class="grid-container grid-explicit">
+        <div class="item">Fixed</div>
+        <div class="item">Large</div>
+        <div class="item">Small</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>3. Grid Areas (Layout)</h2>
+      <p>Using <code>grid-template-areas</code> to build a layout.</p>
+      <div class="grid-container grid-areas">
+        <div class="item header">Header</div>
+        <div class="item sidebar">Sidebar</div>
+        <div class="item content">Main Content</div>
+        <div class="item footer">Footer</div>
+      </div>
+    </div>
+
+    <!-- BOTTOM NAVIGATION -->
+    <footer>
+      <hr />
+      <p>
+        <a href="../04-flexbox/index.html">← Previous: 04 Flexbox</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="../06-typography-colors/index.html">Next: 06 Type →</a>
+      </p>
+    </footer>
+  </body>
+</html>

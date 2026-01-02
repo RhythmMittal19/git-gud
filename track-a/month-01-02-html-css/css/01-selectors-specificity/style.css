@@ -1,0 +1,131 @@
+/* --- GLOBAL STYLES --- */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- NAVIGATION BAR --- */
+.demo-nav {
+  background: #252526;
+  padding: 15px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 2px solid #4ec9b0;
+}
+
+.demo-nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.demo-nav a:hover {
+  background: #333;
+  color: #fff;
+}
+
+.demo-nav a.active {
+  background: #4ec9b0;
+  color: #1e1e1e;
+  font-weight: bold;
+}
+
+/* --- FOOTER NAVIGATION --- */
+footer {
+  margin-top: 50px;
+  text-align: center;
+  color: #888;
+}
+
+footer hr {
+  border-color: #333;
+  margin-bottom: 20px;
+}
+
+footer a {
+  color: #4ec9b0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.disabled {
+  color: #555;
+  cursor: not-allowed;
+}
+
+/* --- DEMO SPECIFIC STYLES --- */
+
+.container {
+  background: #252526;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #333;
+}
+
+h1 {
+  border-bottom: 1px solid #333;
+  padding-bottom: 10px;
+  color: #fff;
+}
+h2 {
+  color: #4ec9b0;
+  margin-top: 0;
+}
+
+/* 1. Element Selector (Specificity: 0-0-1) */
+p {
+  color: #bbbbbb;
+}
+
+/* 2. Class Selector (Specificity: 0-1-0) */
+.highlight {
+  color: #4ec9b0; /* Light Green */
+  font-weight: bold;
+}
+
+/* 3. ID Selector (Specificity: 1-0-0) */
+#unique {
+  color: #ce9178; /* Orange */
+  text-decoration: underline;
+}
+
+/* 4. Attribute Selectors */
+input[type="text"] {
+  border: 2px solid #4ec9b0;
+  background: #1e1e1e;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+input[type="password"] {
+  border: 1px solid #555;
+  background: #333;
+  color: #aaa;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+/* 5. Descendant Selectors */
+.card span {
+  color: #569cd6; /* Blue */
+  display: block;
+  margin-top: 10px;
+  font-style: italic;
+}
