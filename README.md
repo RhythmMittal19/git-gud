@@ -140,13 +140,42 @@ I follow two parallel tracks simultaneously:
 5. Numbers (parseInt, parseFloat, Math object)
 6. Type conversion and coercion
 
-**Control Flow (Week 5-6):** 7. Conditionals (`if`, `else if`, `else`, `switch`) 8. Truthy and falsy values 9. Loops (`for`, `while`, `do...while`, `for...of`, `for...in`) 10. Break and continue
+**Control Flow (Week 5-6):**
 
-**Functions (Week 6):** 11. Function declarations vs expressions 12. Parameters and arguments 13. Return values 14. Arrow functions 15. Scope (global, function, block) 16. Hoisting 17. Closures (introduction)
+7. Conditionals (`if`, `else if`, `else`, `switch`)
+8. Truthy and falsy values
+9. Loops (`for`, `while`, `do...while`, `for...of`, `for...in`)
+10. Break and continue
 
-**Data Structures (Week 7):** 18. Arrays (creation, indexing, length) 19. Array methods (`push`, `pop`, `shift`, `unshift`, `slice`, `splice`) 20. Array iteration (`forEach`, `map`, `filter`, `reduce`, `find`, `some`, `every`) 21. Objects (creation, properties, methods) 22. Object destructuring 23. Array destructuring 24. Spread operator 25. Rest parameters
+**Functions (Week 6):**
 
-**DOM Manipulation (Week 8):** 26. Selecting elements (`getElementById`, `querySelector`, `querySelectorAll`) 27. Modifying elements (textContent, innerHTML, style, classList) 28. Creating and removing elements 29. Event listeners (`addEventListener`, event types) 30. Event object and event delegation 31. Form handling and validation
+11. Function declarations vs expressions
+12. Parameters and arguments
+13. Return values
+14. Arrow functions
+15. Scope (global, function, block)
+16. Hoisting
+17. Closures (introduction)
+
+**Data Structures (Week 7):**
+
+18. Arrays (creation, indexing, length)
+19. Array methods (`push`, `pop`, `shift`, `unshift`, `slice`, `splice`)
+20. Array iteration (`forEach`, `map`, `filter`, `reduce`, `find`, `some`, `every`)
+21. Objects (creation, properties, methods)
+22. Object destructuring
+23. Array destructuring
+24. Spread operator
+25. Rest parameters
+
+**DOM Manipulation (Week 8):**
+
+26. Selecting elements (`getElementById`, `querySelector`, `querySelectorAll`)
+27. Modifying elements (textContent, innerHTML, style, classList)
+28. Creating and removing elements
+29. Event listeners (`addEventListener`, event types)
+30. Event object and event delegation
+31. Form handling and validation
 
 **Resources:**
 | Type | Resource | Link |
@@ -213,11 +242,30 @@ I follow two parallel tracks simultaneously:
 6. Rendering lists with `.map()`
 7. Conditional rendering
 
-**State Management (Week 12):** 8. useState hook 9. Handling events in React 10. Controlled components (forms) 11. Lifting state up 12. useEffect hook (side effects, cleanup) 13. Dependency arrays
+**State Management (Week 12):**
 
-**Advanced Hooks (Week 13):** 14. useRef hook 15. useContext hook 16. useReducer hook 17. useMemo and useCallback 18. Custom hooks
+8. useState hook
+9. Handling events in React
+10. Controlled components (forms)
+11. Lifting state up
+12. useEffect hook (side effects, cleanup)
+13. Dependency arrays
 
-**Routing & Patterns (Week 14):** 19. React Router (routes, navigation, params) 20. Protected routes 21. Component composition patterns 22. Error boundaries 23. React Developer Tools
+**Advanced Hooks (Week 13):**
+
+14. useRef hook
+15. useContext hook
+16. useReducer hook
+17. useMemo and useCallback
+18. Custom hooks
+
+**Routing & Patterns (Week 14):**
+
+19. React Router (routes, navigation, params)
+20. Protected routes
+21. Component composition patterns
+22. Error boundaries
+23. React Developer Tools
 
 **Resources:**
 | Type | Resource | Link |
@@ -1169,5 +1217,3 @@ _"The expert in anything was once a beginner. The master has failed more times t
 
 **Started:** January 2026\
 **Destination:** Irreplaceable Developer
-
-
