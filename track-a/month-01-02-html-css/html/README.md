@@ -9,16 +9,9 @@
 ```text
 Month 01-02: HTML & CSS
 │
-├── ★ html/ ◄── YOU ARE HERE
-│ ├── 01-document-structure ◄── START HERE
-│ ├── 02-text-elements
-│ ├── 03-links-images
-│ ├── 04-lists
-│ ├── 05-tables
-│ ├── 06-forms
-│ └── 07-semantic-html
+├── ★ html/ ◄── COMPLETED ✅
 │
-├── css/
+├── css/ ◄── NEXT UP
 └── projects/
 ```
 
@@ -30,13 +23,13 @@ Month 01-02: HTML & CSS
 
 | #   | Topic                                          | Time    | Files                     | Status |
 | --- | ---------------------------------------------- | ------- | ------------------------- | ------ |
-| 1   | [Document Structure](./01-document-structure/) | 1-2 hrs | demo.html, exercises.html | ⬜     |
-| 2   | [Text Elements](./02-text-elements/)           | 1-2 hrs | demo.html, exercises.html | ⬜     |
-| 3   | [Links & Images](./03-links-images/)           | 2-3 hrs | demo.html, exercises.html | ⬜     |
-| 4   | [Lists](./04-lists/)                           | 1-2 hrs | demo.html, exercises.html | ⬜     |
-| 5   | [Tables](./05-tables/)                         | 2-3 hrs | demo.html, exercises.html | ⬜     |
-| 6   | [Forms](./06-forms/)                           | 3-4 hrs | demo.html, exercises.html | ⬜     |
-| 7   | [Semantic HTML](./07-semantic-html/)           | 2-3 hrs | demo.html, exercises.html | ⬜     |
+| 1   | [Document Structure](./01-document-structure/) | 1-2 hrs | demo.html, exercises.html | ✅     |
+| 2   | [Text Elements](./02-text-elements/)           | 1-2 hrs | demo.html, exercises.html | ✅     |
+| 3   | [Links & Images](./03-links-images/)           | 2-3 hrs | demo.html, exercises.html | ✅     |
+| 4   | [Lists](./04-lists/)                           | 1-2 hrs | demo.html, exercises.html | ✅     |
+| 5   | [Tables](./05-tables/)                         | 2-3 hrs | demo.html, exercises.html | ✅     |
+| 6   | [Forms](./06-forms/)                           | 3-4 hrs | demo.html, exercises.html | ✅     |
+| 7   | [Semantic HTML](./07-semantic-html/)           | 2-3 hrs | demo.html, exercises.html | ✅     |
 
 **Total Time:** ~15-20 hours
 

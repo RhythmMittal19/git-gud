@@ -51,20 +51,19 @@ text
 
 ## 📚 Learning Path
 
-| Order | Folder                                               | Topics                         | Duration | Status         |
-| ----- | ---------------------------------------------------- | ------------------------------ | -------- | -------------- |
-| 1     | [month-01-02-html-css/](./month-01-02-html-css/)     | HTML, CSS, Responsive Design   | 8 weeks  | ⬜ Not Started |
-| 2     | [month-03-04-javascript/](./month-03-04-javascript/) | JS Fundamentals, DOM, Async    | 8 weeks  | 🔒 Locked      |
-| 3     | [month-05-06-react/](./month-05-06-react/)           | React, Hooks, State Management | 8 weeks  | 🔒 Locked      |
-| 4     | [month-07-08-backend/](./month-07-08-backend/)       | Node.js, Express, MongoDB, SQL | 8 weeks  | 🔒 Locked      |
-| 5     | [month-09-10-fullstack/](./month-09-10-fullstack/)   | Full-Stack Projects, DevOps    | 8 weeks  | 🔒 Locked      |
+| Order | Folder                                               | Topics                         | Duration | Status    |
+| ----- | ---------------------------------------------------- | ------------------------------ | -------- | --------- |
+| 1     | [month-01-02-html-css/](./month-01-02-html-css/)     | HTML, CSS, Responsive Design   | 8 weeks  | 🟡        |
+| 2     | [month-03-04-javascript/](./month-03-04-javascript/) | JS Fundamentals, DOM, Async    | 8 weeks  | 🔒 Locked |
+| 3     | [month-05-06-react/](./month-05-06-react/)           | React, Hooks, State Management | 8 weeks  | 🔒 Locked |
+| 4     | [month-07-08-backend/](./month-07-08-backend/)       | Node.js, Express, MongoDB, SQL | 8 weeks  | 🔒 Locked |
+| 5     | [month-09-10-fullstack/](./month-09-10-fullstack/)   | Full-Stack Projects, DevOps    | 8 weeks  | 🔒 Locked |
 
 **Status Legend:**
-
 - ⬜ Not Started
 - 🟡 In Progress
 - ✅ Completed
-- 🔒 Locked (complete previous first)
+- 🔒 Locked
 
 ---
 

@@ -28,27 +28,27 @@ Track A: Full-Stack Development
 
 | Order | Topic              | Folder                                                       | Status |
 | ----- | ------------------ | ------------------------------------------------------------ | ------ |
-| 1.1   | Document Structure | [html/01-document-structure/](./html/01-document-structure/) | ⬜     |
-| 1.2   | Text Elements      | [html/02-text-elements/](./html/02-text-elements/)           | ⬜     |
-| 1.3   | Links & Images     | [html/03-links-images/](./html/03-links-images/)             | ⬜     |
-| 1.4   | Lists              | [html/04-lists/](./html/04-lists/)                           | ⬜     |
-| 1.5   | Tables             | [html/05-tables/](./html/05-tables/)                         | ⬜     |
-| 1.6   | Forms              | [html/06-forms/](./html/06-forms/)                           | ⬜     |
-| 1.7   | Semantic HTML      | [html/07-semantic-html/](./html/07-semantic-html/)           | ⬜     |
+| 1.1   | Document Structure | [html/01-document-structure/](./html/01-document-structure/) | ✅     |
+| 1.2   | Text Elements      | [html/02-text-elements/](./html/02-text-elements/)           | ✅     |
+| 1.3   | Links & Images     | [html/03-links-images/](./html/03-links-images/)             | ✅     |
+| 1.4   | Lists              | [html/04-lists/](./html/04-lists/)                           | ✅     |
+| 1.5   | Tables             | [html/05-tables/](./html/05-tables/)                         | ✅     |
+| 1.6   | Forms              | [html/06-forms/](./html/06-forms/)                           | ✅     |
+| 1.7   | Semantic HTML      | [html/07-semantic-html/](./html/07-semantic-html/)           | ✅     |
 
 ### Part 2: CSS (Week 3-6)
 
 | Order | Topic                    | Folder                                                             | Status |
 | ----- | ------------------------ | ------------------------------------------------------------------ | ------ |
-| 2.1   | Selectors & Specificity  | [css/01-selectors-specificity/](./css/01-selectors-specificity/)   | ⬜     |
-| 2.2   | Box Model                | [css/02-box-model/](./css/02-box-model/)                           | ⬜     |
-| 2.3   | Display & Positioning    | [css/03-display-positioning/](./css/03-display-positioning/)       | ⬜     |
-| 2.4   | Flexbox                  | [css/04-flexbox/](./css/04-flexbox/)                               | ⬜     |
-| 2.5   | Grid                     | [css/05-grid/](./css/05-grid/)                                     | ⬜     |
-| 2.6   | Typography & Colors      | [css/06-typography-colors/](./css/06-typography-colors/)           | ⬜     |
-| 2.7   | Transitions & Animations | [css/07-transitions-animations/](./css/07-transitions-animations/) | ⬜     |
-| 2.8   | Responsive Design        | [css/08-responsive-design/](./css/08-responsive-design/)           | ⬜     |
-| 2.9   | CSS Variables            | [css/09-css-variables/](./css/09-css-variables/)                   | ⬜     |
+| 2.1   | Selectors & Specificity  | [css/01-selectors-specificity/](./css/01-selectors-specificity/)   | 🟡     |
+| 2.2   | Box Model                | [css/02-box-model/](./css/02-box-model/)                           | 🟡     |
+| 2.3   | Display & Positioning    | [css/03-display-positioning/](./css/03-display-positioning/)       | 🟡     |
+| 2.4   | Flexbox                  | [css/04-flexbox/](./css/04-flexbox/)                               | 🟡     |
+| 2.5   | Grid                     | [css/05-grid/](./css/05-grid/)                                     | 🟡     |
+| 2.6   | Typography & Colors      | [css/06-typography-colors/](./css/06-typography-colors/)           | 🟡     |
+| 2.7   | Transitions & Animations | [css/07-transitions-animations/](./css/07-transitions-animations/) | 🟡     |
+| 2.8   | Responsive Design        | [css/08-responsive-design/](./css/08-responsive-design/)           | 🟡     |
+| 2.9   | CSS Variables            | [css/09-css-variables/](./css/09-css-variables/)                   | 🟡     |
 
 ### Part 3: Projects (Week 7-8)
 
@@ -65,18 +65,20 @@ Track A: Full-Stack Development
 
 👉 **[Begin with: HTML Document Structure](./html/01-document-structure/)**
 
+## 🚀 Current Focus
+
+👉 **[Begin: Phase 2 - CSS](./css/01-selectors-specificity/)**
+
 ---
 
 ## 📂 Folder Structure
+
 ```text
 month-01-02-html-css/
 ├── README.md ◄── You are here
 ├── html/
 │ ├── 01-document-structure/
-│ │ ├── README.md ← Instructions
-│ │ ├── demo.html ← Open in browser to SEE
-│ │ ├── exercises.html ← Practice (you code)
-│ │ └── solutions.html ← Answers (don't peek!)
+│ │ └── demo.html ← Open in browser to SEE
 │ ├── 02-text-elements/
 │ ├── 03-links-images/
 │ ├── 04-lists/
@@ -100,9 +102,9 @@ month-01-02-html-css/
 
 | Week   | Focus                      | Hours/Week |
 | ------ | -------------------------- | ---------- |
-| Week 1 | HTML basics (1.1 - 1.4)    | 15-20 hrs  |
-| Week 2 | HTML advanced (1.5 - 1.7)  | 15-20 hrs  |
-| Week 3 | CSS basics (2.1 - 2.3)     | 15-20 hrs  |
+| Week 1 | HTML basics (completed)    | 15-20 hrs  |
+| Week 2 | HTML advanced (completed)  | 15-20 hrs  |
+| Week 3 | CSS basics (current)       | 15-20 hrs  |
 | Week 4 | CSS layout (2.4 - 2.5)     | 15-20 hrs  |
 | Week 5 | CSS styling (2.6 - 2.7)    | 15-20 hrs  |
 | Week 6 | CSS responsive (2.8 - 2.9) | 15-20 hrs  |
@@ -112,11 +114,12 @@ month-01-02-html-css/
 ---
 
 ## ✅ Completion Checklist
+
 ```text
 Before moving to JavaScript, make sure you can:
-□ Write HTML document structure from memory
-□ Use semantic HTML elements correctly
-□ Create forms with proper validation attributes
+✅ Write HTML document structure from memory
+✅ Use semantic HTML elements correctly
+✅ Create forms with proper validation attributes
 □ Explain CSS specificity
 □ Build layouts with Flexbox
 □ Build layouts with Grid

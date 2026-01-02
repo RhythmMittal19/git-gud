@@ -1145,7 +1145,7 @@ git-gud/
 
 ### January
 
-#### Week 1 — Environment Setup ✓
+#### Week 1 — Environment Setup ✅
 
 - [x] WSL2 + Ubuntu 24.04 installed
 - [x] Windows Terminal configured
@@ -1156,10 +1156,20 @@ git-gud/
 - [x] Python 3.12 installed
 - [x] Repository created
 
-#### Week 2 — Starting
+#### Week 2 — HTML Fundamentals ✅
 
-- [ ] HTML fundamentals
-- [ ] First webpage
+- [x] Document Structure & Metadata
+- [x] Text Elements, Lists, Tables
+- [x] Forms & Input Types
+- [x] Semantic HTML
+- [x] Visual reference demos created
+
+#### Week 3 — CSS Mastery (Current)
+
+- [ ] Selectors & Specificity
+- [ ] Box Model
+- [ ] Flexbox & Grid
+- [ ] Typography & Colors
 
 ---
 
