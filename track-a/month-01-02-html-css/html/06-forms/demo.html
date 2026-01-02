@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06 - Forms Demo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        max-width: 950px;
+        margin: 0 auto;
+        background-color: #1a1a2e;
+        color: #eee;
+      }
+
+      h1 {
+        color: #00ff88;
+        border-bottom: 2px solid #00ff88;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        color: #00d4ff;
+        margin-top: 40px;
+        margin-bottom: 15px;
+      }
+      h3 {
+        color: #ff6b6b;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+
+      .code-box {
+        background-color: #0d0d1a;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 15px 0;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 13px;
+        color: #00ff88;
+        overflow-x: auto;
+        white-space: pre;
+      }
+
+      .side-by-side {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 15px 0;
+      }
+
+      @media (max-width: 750px) {
+        .side-by-side {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .compare-box {
+        background-color: #0d0d1a;
+        border-radius: 8px;
+        padding: 15px;
+      }
+
+      .compare-title {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #333;
+      }
+
+      .code-title {
+        color: #ff6b6b;
+      }
+      .output-title {
+        color: #00ff88;
+      }
+
+      .demo-box {
+        background-color: #16213e;
+        border: 2px solid #00d4ff;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 15px 0;
+      }
+
+      .demo-label {
+        background-color: #00d4ff;
+        color: #1a1a2e;
+        padding: 5px 15px;
+        border-radius: 4px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 15px;
+        font-size: 14px;
+      }
+
+      .tip {
+        background-color: #00ff8822;
+        border-left: 4px solid #00ff88;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .note {
+        background-color: #ff6b6b22;
+        border-left: 4px solid #ff6b6b;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      /* Reference table */
+      table.reference {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+
+      table.reference th,
+      table.reference td {
+        border: 1px solid #333;
+        padding: 10px;
+        text-align: left;
+      }
+
+      table.reference th {
+        background-color: #00d4ff;
+        color: #1a1a2e;
+      }
+      table.reference tr:nth-child(even) {
+        background-color: #0d0d1a;
+      }
+
+      /* Form styles for output */
+      .output-area input,
+      .output-area textarea,
+      .output-area select {
+        padding: 8px 12px;
+        border: 1px solid #444;
+        border-radius: 4px;
+        background-color: #0d0d1a;
+        color: #eee;
+        font-size: 14px;
+        width: 100%;
+        margin: 5px 0;
+      }
+
+      .output-area input:focus,
+      .output-area textarea:focus,
+      .output-area select:focus {
+        outline: none;
+        border-color: #00d4ff;
+      }
+
+      .output-area label {
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        color: #00d4ff;
+      }
+
+      .output-area button {
+        padding: 10px 20px;
+        background-color: #00ff88;
+        color: #1a1a2e;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: bold;
+        margin-top: 15px;
+      }
+
+      .output-area button:hover {
+        background-color: #00d4ff;
+      }
+
+      .inline-options {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin: 10px 0;
+      }
+
+      .inline-options input {
+        width: auto;
+      }
+
+      .inline-options label {
+        display: inline;
+        margin: 0;
+        color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📝 06 - Forms</h1>
+
+    <p>
+      Forms collect user input. They're essential for login pages, contact
+      forms, surveys, and more.
+    </p>
+
+    <!-- ==================== BASIC FORM ==================== -->
+    <h2>📋 Basic Form Structure</h2>
+
+    <div class="code-box">
+      &lt;form action="/submit" method="POST"&gt;<br />
+      &lt;!-- Form elements go here --&gt;<br />
+      &lt;/form&gt;<br />
+      action = Where to send data (URL) <br />
+      method = How to send (GET or POST)
+    </div>
+
+    <div class="tip">
+      <strong>💡 GET vs POST:</strong>
+      <ul style="margin-top: 10px; margin-left: 20px">
+        <li><strong>GET:</strong> Data visible in URL (use for searches)</li>
+        <li>
+          <strong>POST:</strong> Data hidden (use for login, sensitive data)
+        </li>
+      </ul>
+    </div>
+
+    <!-- ==================== TEXT INPUTS ==================== -->
+    <h2>⌨️ Text Input Types</h2>
+
+    <h3>Text Input</h3>
+
+    <div class="side-by-side">
+      <div class="compare-box">
+        <div class="compare-title code-title">CODE</div>
+        <code>
+          &lt;label for="name"&gt;Name:&lt;/label&gt;<br />
+          &lt;input type="text" id="name" name="name" placeholder="Enter your
+          name" required &gt; <br />
+        </code>
+      </div>
+      <div class="compare-box output-area">
+        <div class="compare-title output-title">OUTPUT</div>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+    </div>
+
+    <h3>Email Input</h3>
+
+    <div class="side-by-side">
+      <div class="compare-box">
+        <div class="compare-title code-title">CODE</div>
+        <code>
+          &lt;label for="email"&gt;Email:&lt;/label&gt;<br />
+          &lt;input type="email" id="email" name="email"
+          placeholder="you@example.com" required &gt;<br />
+        </code>
+      </div>
+      <div class="compare-box output-area">
+        <div class="compare-title output-title">
+          OUTPUT (validates email format!)
+        </div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+        />
+      </div>
+    </div>
+
+    <h3>Password Input</h3>
+
+    <div class="side-by-side">
+      <div class="compare-box">
+        <div class="compare-title code-title">CODE</div>
+        <code>
+          &lt;label for="password"&gt;Password:&lt;/label&gt;<br />
+          &lt;input type="password" id="password" name="password" minlength="8"
+          required &gt;<br />
+        </code>
+      </div>
+      <div class="compare-box output-area">
+        <div class="compare-title output-title">
+          OUTPUT (characters hidden!)
+        </div>
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          minlength="8"
+          required
+        />
+      </div>
+    </div>
+
+    <!-- ==================== ALL INPUT TYPES ==================== -->
+    <h2>📦 All Input Types</h2>
+
+    <table class="reference">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Code</th>
+          <th>Use Case</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>text</td>
+          <td><code>type="text"</code></td>
+          <td>General text input</td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td><code>type="email"</code></td>
+          <td>Email (validates format)</td>
+        </tr>
+        <tr>
+          <td>password</td>
+          <td><code>type="password"</code></td>
+          <td>Password (hidden characters)</td>
+        </tr>
+        <tr>
+          <td>number</td>
+          <td><code>type="number"</code></td>
+          <td>Numbers only (with arrows)</td>
+        </tr>
+        <tr>
+          <td>tel</td>
+          <td><code>type="tel"</code></td>
+          <td>Phone number</td>
+        </tr>
+        <tr>
+          <td>url</td>
+          <td><code>type="url"</code></td>
+          <td>Website URL</td>
+        </tr>
+        <tr>
+          <td>date</td>
+          <td><code>type="date"</code></td>
+          <td>Date picker</td>
+        </tr>
+        <tr>
+          <td>time</td>
+          <td><code>type="time"</code></td>
+          <td>Time picker</td>
+        </tr>
+        <tr>
+          <td>file</td>
+          <td><code>type="file"</code></td>
+          <td>File upload</td>
+        </tr>
+        <tr>
+          <td>color</td>
+          <td><code>type="color"</code></td>
+          <td>Color picker</td>
+        </tr>
+        <tr>
+          <td>range</td>
+          <td><code>type="range"</code></td>
+          <td>Slider</td>
+        </tr>
+        <tr>
+          <td>search</td>
+          <td><code>type="search"</code></td>
+          <td>Search box (with clear button)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== LIVE EXAMPLES ==================== -->
+    <h3>Live Examples of Special Types</h3>
+
+    <div class="demo-box output-area">
+      <span class="demo-label">Try These Inputs!</span>
+
+      <label for="num">Number (min: 0, max: 100):</label>
+      <input type="number" id="num" min="0" max="100" value="50" />
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" />
+
+      <label for="color">Color:</label>
+      <input
+        type="color"
+        id="color"
+        value="#00ff88"
+        style="height: 40px; cursor: pointer"
+      />
+
+      <label for="range">Range (0-100): <span id="rangeValue">50</span></label>
+      <input
+        type="range"
+        id="range"
+        min="0"
+        max="100"
+        value="50"
+        oninput="document.getElementById('rangeValue').textContent = this.value"
+      />
+
+      <label for="file">File Upload:</label>
+      <input type="file" id="file" />
+    </div>
+
+    <!-- ==================== TEXTAREA ==================== -->
+    <h2>📄 Textarea (Multi-line Text)</h2>
+
+    <div class="side-by-side">
+      <div class="compare-box">
+        <div class="compare-title code-title">CODE</div>
+        <code>
+          &lt;label for="message"&gt;Message:&lt;/label&gt;<br />
+          &lt;textarea id="message" name="message" rows="4" cols="50"
+          placeholder="Write your message..." &gt;<br />
+          &lt;/textarea&gt;<br />
+        </code>
+      </div>
+      <div class="compare-box output-area">
+        <div class="compare-title output-title">OUTPUT</div>
+        <label for="message">Message:</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          placeholder="Write your message..."
+        ></textarea>
+      </div>
+    </div>
+
+    <!-- ==================== SELECT DROPDOWN ==================== -->
+    <h2>📑 Select Dropdown</h2>
+
+    <div class="side-by-side">
+      <div class="compare-box">
+        <div class="compare-title code-title">CODE</div>
+        <code>
+          &lt;label for="country"&gt;Country:&lt;/label&gt;<br />
+          &lt;select id="country" name="country"&gt;<br />
+          &lt;option value=""&gt;Select a country&lt;/option&gt;<br />
+          &lt;option value="in"&gt;India&lt;/option&gt;<br />
+          &lt;option value="us"&gt;United States&lt;/option&gt;<br />
+          &lt;option value="uk"&gt;United Kingdom&lt;/option&gt;<br />
+          &lt;/select&gt;
+        </code>
+      </div>
+      <div class="compare-box output-area">
+        <div class="compare-title output-title">OUTPUT</div>
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option value="">Select a country</option>
+          <option value="in">India</option>
+          <option value="us">United States</option>
+          <option value="uk">United Kingdom</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- ==================== CHECKBOX & RADIO ==================== -->
+    <h2>☑️ Checkboxes & Radio Buttons</h2>
+
+    <h3>Checkboxes (Multiple selections)</h3>
+
+    <div class="side-by-side">
+      <div class="compare-box">
+        <div class="compare-title code-title">CODE</div>
+        <code>
+          &lt;p&gt;Select your skills:&lt;/p&gt;<br />
+          &lt;input type="checkbox" id="html" name="skills" value="html"&gt;<br />
+          &lt;label for="html"&gt;HTML&lt;/label&gt;<br />
+          &lt;input type="checkbox" id="css" name="skills" value="css"&gt;<br />
+          &lt;label for="css"&gt;CSS&lt;/label&gt;<br />
+          &lt;input type="checkbox" id="js" name="skills" value="js"&gt;<br />
+          &lt;label for="js"&gt;JavaScript&lt;/label&gt;<br />
+        </code>
+      </div>
+      <div class="compare-box output-area">
+        <div class="compare-title output-title">OUTPUT (select multiple!)</div>
+        <p style="margin-bottom: 10px">Select your skills:</p>
+        <div class="inline-options">
+          <div>
+            <input type="checkbox" id="html" name="skills" value="html" />
+            <label for="html">HTML</label>
+          </div>
+          <div>
+            <input type="checkbox" id="css" name="skills" value="css" />
+            <label for="css">CSS</label>
+          </div>
+          <div>
+            <input type="checkbox" id="js" name="skills" value="js" />
+            <label for="js">JavaScript</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Radio Buttons (Single selection)</h3>
+
+    <div class="side-by-side">
+      <div class="compare-box">
+        <div class="compare-title code-title">CODE</div>
+        <code>
+          &lt;p&gt;Experience level:&lt;/p&gt;<br />
+          &lt;input type="radio" id="beginner" name="level"
+          value="beginner"&gt;<br />
+          &lt;label for="beginner"&gt;Beginner&lt;/label&gt;<br />
+          &lt;input type="radio" id="intermediate" name="level"
+          value="intermediate"&gt;<br />
+          &lt;label for="intermediate"&gt;Intermediate&lt;/label&gt;<br />
+          &lt;input type="radio" id="expert" name="level" value="expert"&gt;<br />
+          &lt;label for="expert"&gt;Expert&lt;/label&gt;<br />
+        </code>
+      </div>
+      <div class="compare-box output-area">
+        <div class="compare-title output-title">OUTPUT (only one!)</div>
+        <p style="margin-bottom: 10px">Experience level:</p>
+        <div class="inline-options">
+          <div>
+            <input type="radio" id="beginner" name="level" value="beginner" />
+            <label for="beginner">Beginner</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="intermediate"
+              name="level"
+              value="intermediate"
+            />
+            <label for="intermediate">Intermediate</label>
+          </div>
+          <div>
+            <input type="radio" id="expert" name="level" value="expert" />
+            <label for="expert">Expert</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong
+        >💡 Radio buttons with same <code>name</code> attribute are grouped
+        together.</strong
+      >
+      Only one can be selected at a time!
+    </div>
+
+    <!-- ==================== IMPORTANT ATTRIBUTES ==================== -->
+    <h2>🏷️ Important Form Attributes</h2>
+
+    <table class="reference">
+      <thead>
+        <tr>
+          <th>Attribute</th>
+          <th>Purpose</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>required</code></td>
+          <td>Field must be filled</td>
+          <td><code>&lt;input required&gt;</code></td>
+        </tr>
+        <tr>
+          <td><code>placeholder</code></td>
+          <td>Hint text inside input</td>
+          <td><code>placeholder="Enter name"</code></td>
+        </tr>
+        <tr>
+          <td><code>disabled</code></td>
+          <td>Can't interact with field</td>
+          <td><code>&lt;input disabled&gt;</code></td>
+        </tr>
+        <tr>
+          <td><code>readonly</code></td>
+          <td>Can read but not edit</td>
+          <td><code>&lt;input readonly&gt;</code></td>
+        </tr>
+        <tr>
+          <td><code>minlength</code></td>
+          <td>Minimum characters</td>
+          <td><code>minlength="8"</code></td>
+        </tr>
+        <tr>
+          <td><code>maxlength</code></td>
+          <td>Maximum characters</td>
+          <td><code>maxlength="100"</code></td>
+        </tr>
+        <tr>
+          <td><code>min</code> / <code>max</code></td>
+          <td>Number range</td>
+          <td><code>min="0" max="100"</code></td>
+        </tr>
+        <tr>
+          <td><code>pattern</code></td>
+          <td>Regex validation</td>
+          <td><code>pattern="[A-Za-z]+"</code></td>
+        </tr>
+        <tr>
+          <td><code>autofocus</code></td>
+          <td>Focus on page load</td>
+          <td><code>&lt;input autofocus&gt;</code></td>
+        </tr>
+        <tr>
+          <td><code>autocomplete</code></td>
+          <td>Browser autocomplete</td>
+          <td><code>autocomplete="email"</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== COMPLETE FORM ==================== -->
+    <h2>📋 Complete Form Example</h2>
+
+    <div class="demo-box output-area">
+      <span class="demo-label">Working Contact Form</span>
+
+      <form
+        onsubmit="alert('Form submitted! (This is just a demo)'); return false;"
+      >
+        <label for="fullname">Full Name: *</label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="John Doe"
+          required
+        />
+
+        <label for="contactemail">Email: *</label>
+        <input
+          type="email"
+          id="contactemail"
+          name="email"
+          placeholder="john@example.com"
+          required
+        />
+
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject">
+          <option value="">Choose a subject</option>
+          <option value="general">General Inquiry</option>
+          <option value="support">Technical Support</option>
+          <option value="feedback">Feedback</option>
+        </select>
+
+        <label for="contactmessage">Message: *</label>
+        <textarea
+          id="contactmessage"
+          name="message"
+          rows="4"
+          placeholder="Your message..."
+          required
+        ></textarea>
+
+        <div style="margin-top: 15px">
+          <input
+            type="checkbox"
+            id="newsletter"
+            name="newsletter"
+            value="yes"
+          />
+          <label for="newsletter" style="display: inline; color: #eee"
+            >Subscribe to newsletter</label
+          >
+        </div>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <!-- ==================== LABEL IMPORTANCE ==================== -->
+    <h2>🏷️ Why Labels Matter</h2>
+
+    <div class="note">
+      <strong>⚠️ Always use labels with <code>for</code> attribute!</strong>
+      <ul style="margin-top: 10px; margin-left: 20px">
+        <li>Clicking label focuses the input (better UX)</li>
+        <li>Screen readers read labels (accessibility)</li>
+        <li>The <code>for</code> must match input's <code>id</code></li>
+      </ul>
+
+      <div class="code-box" style="margin-top: 15px">
+        &lt;!-- ❌ Wrong --&gt;<br />
+        Name:&lt;input type="text"&gt;<br />
+        &lt;!-- ✅ Correct --&gt;<br />
+        &lt;label for="name"&gt;Name:&lt;/label&gt;<br />
+        &lt;input type="text" id="name"&gt;<br />
+      </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <hr style="margin: 40px 0; border-color: #333" />
+
+    <p style="text-align: center; color: #888">
+      <a href="../05-tables/demo.html" style="color: #00d4ff">← 05 Tables</a>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <strong>Next:</strong>
+      <a href="../07-semantic-html/demo.html" style="color: #00d4ff"
+        >07 - Semantic HTML →</a
+      >
+    </p>
+  </body>
+</html>

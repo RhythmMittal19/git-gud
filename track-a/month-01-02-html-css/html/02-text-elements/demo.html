@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 - Text Elements Demo</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        max-width: 900px;
+        margin: 0 auto;
+        background-color: #1a1a2e;
+        color: #eee;
+      }
+
+      h1 {
+        color: #00ff88;
+        border-bottom: 2px solid #00ff88;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+      }
+      h2 {
+        color: #00d4ff;
+        margin-top: 40px;
+        margin-bottom: 15px;
+      }
+      h3 {
+        color: #ff6b6b;
+        margin-top: 25px;
+        margin-bottom: 10px;
+      }
+
+      .code-box {
+        background-color: #0d0d1a;
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 15px;
+        margin: 15px 0;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 14px;
+        color: #00ff88;
+        overflow-x: auto;
+      }
+
+      .demo-box {
+        background-color: #16213e;
+        border: 2px solid #00d4ff;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 15px 0;
+      }
+
+      .demo-label {
+        background-color: #00d4ff;
+        color: #1a1a2e;
+        padding: 5px 15px;
+        border-radius: 4px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 15px;
+        font-size: 14px;
+      }
+
+      .side-by-side {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 15px 0;
+      }
+
+      @media (max-width: 700px) {
+        .side-by-side {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .compare-box {
+        background-color: #0d0d1a;
+        border-radius: 8px;
+        padding: 15px;
+      }
+
+      .compare-title {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #333;
+      }
+
+      .code-title {
+        color: #ff6b6b;
+      }
+      .output-title {
+        color: #00ff88;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+
+      th,
+      td {
+        border: 1px solid #333;
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #00d4ff;
+        color: #1a1a2e;
+      }
+
+      tr:nth-child(even) {
+        background-color: #0d0d1a;
+      }
+
+      .note {
+        background-color: #ff6b6b22;
+        border-left: 4px solid #ff6b6b;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      .tip {
+        background-color: #00ff8822;
+        border-left: 4px solid #00ff88;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 0 8px 8px 0;
+      }
+
+      /* Reset demo area styles */
+      .output-area h1,
+      .output-area h2,
+      .output-area h3,
+      .output-area h4,
+      .output-area h5,
+      .output-area h6 {
+        color: inherit;
+        margin: 5px 0;
+        border: none;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>📝 02 - Text Elements</h1>
+
+    <p>HTML provides various elements to structure and format text content.</p>
+
+    <!-- ==================== HEADINGS ==================== -->
+    <h2>📌 Headings (h1 - h6)</h2>
+
+    <p>
+      HTML has 6 levels of headings. <code>&lt;h1&gt;</code> is the most
+      important, <code>&lt;h6&gt;</code> is the least.
+    </p>
+
+    <div class="side-by-side">
+      <div class="compare-box">
+        <div class="compare-title code-title">CODE</div>
+        <code>
+          &lt;h1&gt;Heading 1&lt;/h1&gt;
+          <br />
+          &lt;h2&gt;Heading 2&lt;/h2&gt;
+          <br />
+          &lt;h3&gt;Heading 3&lt;/h3&gt;
+          <br />
+          &lt;h4&gt;Heading 4&lt;/h4&gt;
+          <br />
+          &lt;h5&gt;Heading 5&lt;/h5&gt;
+          <br />
+          &lt;h6&gt;Heading 6&lt;/h6&gt;
+        </code>
+      </div>
+      <div class="compare-box output-area">
+        <div class="compare-title output-title">OUTPUT</div>
+        <h1 style="font-size: 2em; color: white">Heading 1</h1>
+        <h2 style="font-size: 1.5em; color: white">Heading 2</h2>
+        <h3 style="font-size: 1.17em; color: white">Heading 3</h3>
+        <h4 style="font-size: 1em; color: white">Heading 4</h4>
+        <h5 style="font-size: 0.83em; color: white">Heading 5</h5>
+        <h6 style="font-size: 0.67em; color: white">Heading 6</h6>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>⚠️ Important Rules:</strong>
+      <ul>
+        <li>Only ONE <code>&lt;h1&gt;</code> per page (like a book title)</li>
+        <li>Don't skip levels (h1 → h3 is wrong, use h1 → h2 → h3)</li>
+        <li>Use headings for STRUCTURE, not for making text big</li>
+      </ul>
+    </div>
+
+    <!-- ==================== PARAGRAPHS ==================== -->
+    <h2>📌 Paragraphs</h2>
+
+    <div class="side-by-side">
+      <div class="compare-box">
+        <div class="compare-title code-title">CODE</div>
+        <code>
+          &lt;p&gt;This is a paragraph. Browsers add space above and below
+          automatically.&lt;/p&gt;
+          <br />
+          &lt;p&gt;This is another paragraph.&lt;/p&gt;
+        </code>
+      </div>
+      <div class="compare-box">
+        <div class="compare-title output-title">OUTPUT</div>
+        <p style="margin: 10px 0">
+          This is a paragraph. Browsers add space above and below automatically.
+        </p>
+        <p style="margin: 10px 0">This is another paragraph.</p>
+      </div>
+    </div>
+
+    <div class="tip">
+      <strong>💡 Note:</strong> Line breaks in your code are ignored. The text
+      flows continuously. Use <code>&lt;br&gt;</code> for line breaks.
+    </div>
+
+    <!-- ==================== LINE BREAKS ==================== -->
+    <h2>📌 Line Break & Horizontal Rule</h2>
+
+    <div class="side-by-side">
+      <div class="compare-box">
+        <div class="compare-title code-title">CODE</div>
+        <code>
+          &lt;p&gt;Line one&lt;br&gt;Line two&lt;br&gt;Line three&lt;/p&gt;
+          &lt;hr&gt; &lt;p&gt;Content after the line.&lt;/p&gt;
+        </code>
+      </div>
+      <div class="compare-box">
+        <div class="compare-title output-title">OUTPUT</div>
+        <p>Line one<br />Line two<br />Line three</p>
+        <hr style="margin: 15px 0; border-color: #444" />
+        <p>Content after the line.</p>
+      </div>
+    </div>
+
+    <!-- ==================== TEXT FORMATTING ==================== -->
+    <h2>📌 Text Formatting</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>Code</th>
+          <th>Output</th>
+          <th>Use When</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Strong (Bold)</td>
+          <td><code>&lt;strong&gt;text&lt;/strong&gt;</code></td>
+          <td><strong>text</strong></td>
+          <td>Important content</td>
+        </tr>
+        <tr>
+          <td>Emphasis (Italic)</td>
+          <td><code>&lt;em&gt;text&lt;/em&gt;</code></td>
+          <td><em>text</em></td>
+          <td>Stressed words</td>
+        </tr>
+        <tr>
+          <td>Bold (visual only)</td>
+          <td><code>&lt;b&gt;text&lt;/b&gt;</code></td>
+          <td><b>text</b></td>
+          <td>Stylistically bold (no importance)</td>
+        </tr>
+        <tr>
+          <td>Italic (visual only)</td>
+          <td><code>&lt;i&gt;text&lt;/i&gt;</code></td>
+          <td><i>text</i></td>
+          <td>Technical terms, foreign words</td>
+        </tr>
+        <tr>
+          <td>Underline</td>
+          <td><code>&lt;u&gt;text&lt;/u&gt;</code></td>
+          <td><u>text</u></td>
+          <td>Misspelled words, proper names (Chinese)</td>
+        </tr>
+        <tr>
+          <td>Strikethrough</td>
+          <td><code>&lt;del&gt;text&lt;/del&gt;</code></td>
+          <td><del>text</del></td>
+          <td>Deleted content</td>
+        </tr>
+        <tr>
+          <td>Inserted</td>
+          <td><code>&lt;ins&gt;text&lt;/ins&gt;</code></td>
+          <td><ins>text</ins></td>
+          <td>Added content</td>
+        </tr>
+        <tr>
+          <td>Highlight</td>
+          <td><code>&lt;mark&gt;text&lt;/mark&gt;</code></td>
+          <td><mark style="background: yellow; color: black">text</mark></td>
+          <td>Highlighted/marked content</td>
+        </tr>
+        <tr>
+          <td>Small</td>
+          <td><code>&lt;small&gt;text&lt;/small&gt;</code></td>
+          <td><small>text</small></td>
+          <td>Fine print, copyright</td>
+        </tr>
+        <tr>
+          <td>Subscript</td>
+          <td><code>H&lt;sub&gt;2&lt;/sub&gt;O</code></td>
+          <td>H<sub>2</sub>O</td>
+          <td>Chemical formulas</td>
+        </tr>
+        <tr>
+          <td>Superscript</td>
+          <td><code>x&lt;sup&gt;2&lt;/sup&gt;</code></td>
+          <td>x<sup>2</sup></td>
+          <td>Math exponents, footnotes</td>
+        </tr>
+        <tr>
+          <td>Code</td>
+          <td><code>&lt;code&gt;text&lt;/code&gt;</code></td>
+          <td>
+            <code style="background: #0d0d1a; padding: 2px 5px">text</code>
+          </td>
+          <td>Inline code</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- ==================== STRONG VS B ==================== -->
+    <h2>📌 &lt;strong&gt; vs &lt;b&gt; — What's the Difference?</h2>
+
+    <div class="demo-box">
+      <span class="demo-label"
+        >They LOOK the same, but MEAN different things:</span
+      >
+
+      <div class="side-by-side" style="margin-top: 15px">
+        <div class="compare-box">
+          <div class="compare-title" style="color: #00ff88">
+            &lt;strong&gt; = IMPORTANT
+          </div>
+          <p style="margin-top: 10px">
+            <strong>Warning: Do not touch!</strong>
+          </p>
+          <p style="font-size: 12px; color: #888; margin-top: 10px">
+            Screen readers will emphasize this.<br />
+            It has semantic meaning.
+          </p>
+        </div>
+        <div class="compare-box">
+          <div class="compare-title" style="color: #ff6b6b">
+            &lt;b&gt; = Just bold styling
+          </div>
+          <p style="margin-top: 10px">
+            <b>Product Name</b>
+          </p>
+          <p style="font-size: 12px; color: #888; margin-top: 10px">
+            Just visual styling.<br />
+            No special meaning.
+          </p>
+        </div>
+      </div>
+
+      <div class="tip" style="margin-top: 20px">
+        <strong>💡 Rule of Thumb:</strong> If the text is IMPORTANT, use
+        <code>&lt;strong&gt;</code>. If you just want it bold for styling, use
+        CSS instead.
+      </div>
+    </div>
+
+    <!-- ==================== PREFORMATTED ==================== -->
+    <h2>📌 Preformatted Text</h2>
+
+    <p>The <code>&lt;pre&gt;</code> tag preserves spaces and line breaks:</p>
+
+    <div class="side-by-side">
+      <div class="compare-box">
+        <div class="compare-title code-title">CODE</div>
+        <code>
+          &lt;pre&gt; This preserves all spaces and line breaks &lt;/pre&gt;
+        </code>
+      </div>
+      <div class="compare-box">
+        <div class="compare-title output-title">OUTPUT</div>
+        <pre style="font-family: monospace; color: #eee">
+    This    preserves
+    all     spaces
+    and line breaks
+            </pre
+        >
+      </div>
+    </div>
+
+    <!-- ==================== BLOCKQUOTE ==================== -->
+    <h2>📌 Blockquote</h2>
+
+    <div class="side-by-side">
+      <div class="compare-box">
+        <div class="compare-title code-title">CODE</div>
+        <code>
+          &lt;blockquote&gt; "The only way to learn to code is to code."
+          &lt;/blockquote&gt;
+        </code>
+      </div>
+      <div class="compare-box">
+        <div class="compare-title output-title">OUTPUT</div>
+        <blockquote
+          style="
+            border-left: 4px solid #00d4ff;
+            padding-left: 15px;
+            margin: 10px 0;
+            font-style: italic;
+          "
+        >
+          "The only way to learn to code is to code."
+        </blockquote>
+      </div>
+    </div>
+
+    <!-- ==================== QUICK TEST ==================== -->
+    <h2>🧪 Quick Test</h2>
+
+    <div class="demo-box">
+      <span class="demo-label">Match the element to its use</span>
+
+      <table style="margin-top: 15px">
+        <tr>
+          <td>1. Important warning text</td>
+          <td>A. <code>&lt;em&gt;</code></td>
+        </tr>
+        <tr>
+          <td>2. H₂O (water formula)</td>
+          <td>B. <code>&lt;strong&gt;</code></td>
+        </tr>
+        <tr>
+          <td>3. Emphasized word in sentence</td>
+          <td>C. <code>&lt;mark&gt;</code></td>
+        </tr>
+        <tr>
+          <td>4. Highlighted search result</td>
+          <td>D. <code>&lt;sub&gt;</code></td>
+        </tr>
+      </table>
+
+      <details style="margin-top: 20px">
+        <summary style="cursor: pointer; color: #00ff88">
+          Click to see answers
+        </summary>
+        <p style="margin-top: 10px">1-B, 2-D, 3-A, 4-C</p>
+      </details>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <hr style="margin: 40px 0; border-color: #333" />
+
+    <p style="text-align: center; color: #888">
+      <a href="../01-document-structure/demo.html" style="color: #00d4ff"
+        >← 01 Document Structure</a
+      >
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      <strong>Next:</strong>
+      <a href="../03-links-images/demo.html" style="color: #00d4ff"
+        >03 - Links & Images →</a
+      >
+    </p>
+  </body>
+</html>
