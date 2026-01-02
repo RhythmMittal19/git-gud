@@ -8,9 +8,9 @@ A comprehensive, structured path from absolute beginner to irreplaceable softwar
 
 This is not just a learning log. It's a complete documentation of mastering software development from the ground up — from understanding how transistors work to building distributed systems.
 
-**Name:** Rhythm Mittal
-**Location:** India
-**Started:** January 2026
+**Name:** Rhythm Mittal\
+**Location:** India\
+**Started:** January 2026\
 **Commitment:** 7-10 hours daily
 
 ---
