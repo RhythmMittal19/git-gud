@@ -1,0 +1,240 @@
+/* ═══════════════════════════════════════
+   MODERN CSS - Random Quote Generator
+   ═══════════════════════════════════════ */
+
+/* CSS Variables for easy theming */
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: rgba(255, 255, 255, 0.03);
+  --bg-glass: rgba(255, 255, 255, 0.05);
+  --border-glass: rgba(255, 255, 255, 0.1);
+  --accent: #f59e0b;
+  --accent-hover: #fbbf24;
+  --accent-glow: rgba(245, 158, 11, 0.3);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --success: #10b981;
+  --radius-lg: 24px;
+  --radius-md: 12px;
+  --shadow-lg:
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    0 40px 80px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-primary);
+
+  /* Animated gradient background */
+  background:
+    radial-gradient(ellipse at top left, rgba(245, 158, 11, 0.15), transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(99, 102, 241, 0.1), transparent 50%),
+    var(--bg-primary);
+}
+
+/* Glassmorphism container */
+.quote-container {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  padding: 48px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-width: 550px;
+  width: 90%;
+  text-align: center;
+
+  /* Subtle animation on load */
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  letter-spacing: -0.02em;
+}
+
+h1 span {
+  background: linear-gradient(135deg, var(--accent), #fb923c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Quote box with accent border */
+.quote-box {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-glass);
+  padding: 40px 32px;
+  border-radius: var(--radius-md);
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+
+  /* Accent glow effect */
+  box-shadow: inset 0 0 60px rgba(245, 158, 11, 0.03);
+}
+
+/* Decorative quote mark */
+.quote-box::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  font-size: 6rem;
+  font-family: Georgia, serif;
+  color: var(--accent);
+  opacity: 0.1;
+  line-height: 1;
+}
+
+.quote-text {
+  color: var(--text-primary);
+  font-size: 1.35rem;
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+
+  /* Smooth text transition */
+  transition: opacity 0.3s ease;
+}
+
+.quote-author {
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Button container */
+.buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Primary button - filled */
+#new-quote-btn {
+  padding: 14px 28px;
+  border: none;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--accent), #f97316);
+  color: var(--bg-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+#new-quote-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-hover), #fb923c);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+#new-quote-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}
+
+#new-quote-btn:hover::before {
+  opacity: 1;
+}
+
+#new-quote-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+#new-quote-btn:active {
+  transform: translateY(0);
+}
+
+/* Secondary button - outline/ghost */
+#copy-btn {
+  padding: 14px 24px;
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-md);
+  background: var(--bg-glass);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+#copy-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+#copy-btn:active {
+  transform: translateY(0);
+}
+
+/* Success message */
+.copy-message {
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: var(--success);
+  font-size: 0.875rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.copy-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .quote-container {
+    padding: 32px 24px;
+  }
+
+  .quote-text {
+    font-size: 1.15rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+}

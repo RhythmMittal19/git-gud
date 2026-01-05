@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Toggle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body
+    class="min-h-screen bg-gradient-to-br from-violet-900 via-purple-900 to-indigo-900 flex items-center justify-center p-4"
+  >
+    <div
+      class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 w-full max-w-md border border-white/20"
+    >
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <div class="text-5xl mb-3">🔐</div>
+        <h1 class="text-2xl font-bold text-white">Password Toggle</h1>
+        <p class="text-purple-300 text-sm mt-2">Click the eye to show/hide</p>
+      </div>
+
+      <!-- Password Field -->
+      <div class="space-y-4">
+        <label class="block text-purple-200 text-sm font-medium mb-2">
+          Enter Password
+        </label>
+
+        <!-- Input Container -->
+        <div class="relative">
+          <input
+            type="password"
+            id="passwordInput"
+            placeholder="••••••••••"
+            class="w-full px-4 py-3 pr-12 bg-white/10 border border-purple-400/30 rounded-xl text-white placeholder-purple-300/50 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-transparent transition-all"
+          />
+
+          <!-- Toggle Button -->
+          <button
+            id="toggleBtn"
+            type="button"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-purple-300 hover:text-white transition-colors p-1"
+          >
+            <!-- Eye Icon (Show) -->
+            <span id="eyeShow" class="text-xl ">👁️</span>
+            <!-- Eye Slash Icon (Hide) - Hidden by default -->
+            <span id="eyeHide" class="text-xl hidden">🙈</span>
+          </button>
+        </div>
+
+        <!-- Password Strength Indicator -->
+        <div id="strengthContainer" class="hidden">
+          <div class="flex items-center gap-2 mt-2">
+            <div class="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+              <div
+                id="strengthBar"
+                class="h-full transition-all duration-300"
+              ></div>
+            </div>
+            <span id="strengthText" class="text-xs font-medium"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status Display -->
+      <div id="status" class="mt-6 text-center">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/20 rounded-full text-purple-200 text-sm"
+        >
+          <span id="statusIcon">🔒</span>
+          <span id="statusText">Password Hidden</span>
+        </span>
+      </div>
+
+      <!-- Info Box -->
+      <div class="mt-8 p-4 bg-white/5 rounded-xl border border-white/10">
+        <h3 class="text-purple-200 font-medium text-sm mb-2">
+          💡 How it works:
+        </h3>
+        <ul class="text-purple-300/70 text-xs space-y-1">
+          <li>• Toggles input type: password ↔ text</li>
+          <li>• Swaps eye icons for visual feedback</li>
+          <li>• Updates status message dynamically</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
