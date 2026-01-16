@@ -25,7 +25,7 @@ The usage of AI is prohibited **_(Read books / documentation / google research [
 
 **Typing Speed:** 45 WPM _(wrong hand placement)_ → Target: 80 WPM
 
-_Last Updated: [Date]_
+_Last Updated: [16-01-2026]_
 
 ---
 
@@ -114,6 +114,9 @@ If you can't explain it simply, you don't understand it **_(dont cry please take
 
 **PROPOSED STRUCTURE**
 
+> [!NOTE]
+> The schedule timings are only a rough suggestion. Feel free to adjust them based on your comfort, availability, and learning pace. One important thing I strongly recommend is this: no matter how busy or unmotivated you feel, try to code for at least 15 minutes every day. Even a small daily effort makes a big difference over time.
+
 ```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │                    FOUNDATION TRACK (Week 1-4)                      │
@@ -145,63 +148,101 @@ If you can't explain it simply, you don't understand it **_(dont cry please take
 
 ## Schedule & Time Management
 
+> [!IMPORTANT]
+> This schedule is designed for my specific circumstances. Adjust according to your own situation.
+
+---
+
 ### Daily Schedule (Weekdays)
 
 ```
-06:30 - 07:00  Wake + Review yesterday's notes + Plan today
-07:00 - 10:00  Track B: Deep Fundamentals (3 hrs) [Peak focus time]
-10:00 - 10:15  Break
-10:15 - 12:30  Track B continued (2.25 hrs)
-12:30 - 13:30  Lunch + Complete rest (no screens)
-13:30 - 15:30  Track A: Full-Stack Development (2 hrs)
-15:30 - 15:45  Break
-15:45 - 17:30  Track A continued (1.75 hrs)
-17:30 - 18:00  DSA Practice - 1 problem minimum
-18:00 - 19:30  Freelancing buffer OR Track A projects
-19:30 - 21:30  Physical activity (badminton) + Dinner + Rest
-21:30 - 22:00  Foundation Track (typing, terminal, git)
-22:00 - 00:30  DSA Practice (2-3 problems) + Light review
-00:30 - 06:30  Sleep (6 hours minimum)
+06:30 – 07:00 Wake up + Plan day + Review yesterday's notes
+07:00 – 09:30 Track A — Block 1 (2.5 hrs)
+09:30 – 09:45 Break — walk, water, sunlight
+09:45 – 11:30 Track A — Block 2 (1.75 hrs)
+11:30 – 11:45 Break — snack, rest eyes
+11:45 – 13:00 Track A — Block 3 (1.25 hrs)
+              → Total Track A morning = 5.5 hrs
+13:00 – 14:00 Lunch + Full rest (no screens)
+14:00 – 16:30 Track A — Afternoon session (2.5 hrs)
+              → Total Track A = 8 hrs/day
+16:30 – 17:15 Foundation (typing + terminal + git + bash) — 45 min
+17:15 – 18:45 DSA — 2 LeetCode problems (timed, 45 min each)
+18:45 – 19:00 Get ready → leave for badminton
+19:00 – 22:00 Badminton + travel + shower + dinner (sacred, non-negotiable)
+22:00 – 23:30 Track B — Deep Fundamentals (1.5 hrs)
+23:30 – 06:30 Sleep (7 hours)
 ```
 
-### Daily Totals
+---
 
-- Track B: 5.25 hours
-- Track A: 3.75 hours + optional 1.5 hours
-- Foundation: 30 minutes
-- DSA: 2.5-3 hours
-- **Total: 11.5-13 hours** (with flexibility for freelancing)
+### Daily Totals (Weekdays)
+
+| Activity         | Hours      | Notes                               |
+| ---------------- | ---------- | ----------------------------------- |
+| Track A          | 8 hrs      | Morning + Afternoon (money machine) |
+| Foundation       | 0.75 hr    | Typing, terminal, git, bash         |
+| DSA              | 1.5 hrs    | 2 problems daily                    |
+| Track B          | 1.5 hrs    | Night deep work                     |
+| Badminton + Life | 3 hrs      | Non-negotiable                      |
+| Sleep            | 7 hrs      | 23:30 – 06:30                       |
+| **Total Work**   | ~11.75 hrs |                                     |
+
+---
 
 ### Weekend Schedule
 
+**Saturday**
+
 ```
-08:00 - 08:30  Wake + Light review
-08:30 - 12:30  Track B: Deep Fundamentals (4 hrs)
-12:30 - 13:30  Lunch
-13:30 - 17:30  Track A: Projects (4 hrs)
-17:30 - 18:00  DSA Practice
-18:00 - 21:00  Flexible: Freelancing / Rest / Catch-up
-21:00 - 23:00  Foundation Track (typing practice, Linux exploration)
-23:00 - 00:30  Competitive Programming practice
+08:00 – 14:00 Freelancing / Client work / Upwork proposals (6 hrs)
+14:00 – 15:00 Lunch + rest
+15:00 – 21:00 Build & deploy one killer portfolio project (6 hrs)
+21:00 – 23:00 Codeforces contest OR Virtual + upsolving
+23:00 onwards Chill / Friends / Sleep
 ```
+
+Sunday
+
+```
+09:00 – 14:00 Track B — Deep Fundamentals (5 hrs)
+14:00 – 15:00 Lunch
+15:00 – 17:00 Foundation intensive + Twitter threads + Open source
+17:00 onwards Full rest, family, badminton, zero guilt
+```
+
+---
 
 ### Weekly Structure
 
-| Day       | Focus                                        |
-| --------- | -------------------------------------------- |
-| Monday    | New concepts (both tracks)                   |
-| Tuesday   | Deep practice + implementation               |
-| Wednesday | New concepts + DSA patterns                  |
-| Thursday  | Projects + implementation                    |
-| Friday    | Projects + weekly review                     |
-| Saturday  | Major project work + competitive programming |
-| Sunday    | Catch-up + planning + light exploration      |
+| Day       | Primary Focus                                        |
+| --------- | ---------------------------------------------------- |
+| Monday    | Track A: New concepts + Foundation                   |
+| Tuesday   | Track A: Deep practice + implementation              |
+| Wednesday | Track A: New concepts + DSA pattern focus            |
+| Thursday  | Track A: Projects + build mode                       |
+| Friday    | Track A: Projects + weekly review + publish 1 thread |
+| Saturday  | Freelancing + Portfolio project + Codeforces contest |
+| Sunday    | Track B Deep Day + Foundation intensive + Recovery   |
+
+---
+
+### Weekly Totals
+
+| Activity    | Hours/Week |
+| ----------- | ---------- |
+| Track A     | 52 hrs     |
+| Freelancing | 6 hrs      |
+| Track B     | 12.5 hrs   |
+| DSA         | 9.5 hrs    |
+| Foundation  | 5.75 hrs   |
+| **Total**   | ~86 hrs    |
 
 ---
 
 ## Foundation Track
 
-> **Timeline:** Weeks 1-4 intensive, then ongoing daily practice\
+> **Timeline:** Weeks 1-4 intensive, then ongoing daily practice
 > **Daily Time:** 30-60 minutes (evening slot)
 
 This track runs BEFORE and PARALLEL to everything else. These skills multiply all other learning.
@@ -6329,6 +6370,7 @@ API Documentation:
 ### Indian Tech Interview Prep
 
 **Round Structure (Most Companies):**
+
 1. Online Assessment (DSA + MCQs)
 2. Technical Round 1 (DSA, problem-solving)
 3. Technical Round 2 (System design for experienced, projects for freshers)
@@ -6336,6 +6378,7 @@ API Documentation:
 
 **Aptitude Tests:**
 Many Indian companies (Infosys, TCS, Wipro, even startups) use aptitude tests:
+
 - Quantitative aptitude
 - Logical reasoning
 - Verbal ability
