@@ -29,7 +29,7 @@ _Last Updated: [Date]_
 
 ---
 
-> [!WARNING] **READ THIS IF YOU ARE AN ABSOLUTE BEGINNER**
+> [!WARNING]
 >
 > <details>
 > <summary><strong>Expand / Collapse</strong></summary>
