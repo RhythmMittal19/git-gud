@@ -4,22 +4,20 @@
 > **Daily Time:** 8 hours
 > **End Result:** Portfolio with 5+ killer projects + ₹1-2L/month income
 
-This is the money track. Track B makes you exceptional, but Track A pays the bills.
+This is the money track. Track B makes you exceptional, but Track A pays the bills. ( circumstances based schedule)
 
 ---
 
 ## Current Status
 
-| Field                  | Value             |
-| ---------------------- | ----------------- |
-| **Currently Learning** | HTML Foundations  |
-| **Current Resource**   | The Odin Project  |
-| **Started**            | [Add Date]        |
-| **Target Completion**  | [Add Target Date] |
+| Field                  | Value            |
+| ---------------------- | ---------------- |
+| **Currently Learning** | HTML Foundations |
+| **Current Resource**   | The Odin Project |
+| **Started**            | [16-01-2026]     |
+| **Target Completion**  | [16-01-2026]     |
 
 ---
-
-## 📚 Learning Resources — God Tier Only
 
 > **Philosophy:** One resource at a time. No tutorial hopping. Finish completely before moving on.
 
@@ -45,16 +43,14 @@ These are the building blocks. HTML is the skeleton, CSS is the skin, JavaScript
 
 **What to Complete:**
 
-```
-□ Introduction to HTML and CSS
-□ Elements and Tags
-□ HTML Boilerplate
-□ Working with Text
-□ Lists
-□ Links and Images
-□ Commit Messages
-□ PROJECT: Recipes Website
-```
+- [ ] Introduction to HTML and CSS
+- [ ] Elements and Tags
+- [ ] HTML Boilerplate
+- [ ] Working with Text
+- [ ] Lists
+- [ ] Links and Images
+- [ ] Commit Messages
+- [ ] PROJECT: Recipes Website
 
 **What You'll Learn (In Order):**
 
@@ -163,18 +159,16 @@ ARIA basics (roles, labels)
 
 **What to Complete:**
 
-```
-□ Intro to CSS
-□ The Cascade
-□ Inspecting HTML and CSS
-□ The Box Model
-□ Block and Inline
-□ Flexbox (Introduction)
-□ Flexbox (Growing and Shrinking)
-□ Flexbox (Axes)
-□ Flexbox (Alignment)
-□ PROJECT: Landing Page
-```
+- [ ] Intro to CSS
+- [ ] The Cascade
+- [ ] Inspecting HTML and CSS
+- [ ] The Box Model
+- [ ] Block and Inline
+- [ ] Flexbox (Introduction)
+- [ ] Flexbox (Growing and Shrinking)
+- [ ] Flexbox (Axes)
+- [ ] Flexbox (Alignment)
+- [ ] PROJECT: Landing Page
 
 **What You'll Learn (In Order):**
 
@@ -322,21 +316,19 @@ Performance (will-change, GPU acceleration)
 
 **What to Complete:**
 
-```
-□ Fundamentals Part 1 (Variables, Numbers, Operators)
-□ Fundamentals Part 2 (Strings, Conditionals)
-□ JavaScript Developer Tools
-□ Fundamentals Part 3 (Functions)
-□ Problem Solving
-□ Understanding Errors
-□ PROJECT: Rock Paper Scissors
-□ Clean Code
-□ Fundamentals Part 4 (Arrays, Loops)
-□ DOM Manipulation and Events
-□ PROJECT: Etch-a-Sketch
-□ Fundamentals Part 5 (Objects)
-□ PROJECT: Calculator
-```
+- [ ] Fundamentals Part 1 (Variables, Numbers, Operators)
+- [ ] Fundamentals Part 2 (Strings, Conditionals)
+- [ ] JavaScript Developer Tools
+- [ ] Fundamentals Part 3 (Functions)
+- [ ] Problem Solving
+- [ ] Understanding Errors
+- [ ] PROJECT: Rock Paper Scissors
+- [ ] Clean Code
+- [ ] Fundamentals Part 4 (Arrays, Loops)
+- [ ] DOM Manipulation and Events
+- [ ] PROJECT: Etch-a-Sketch
+- [ ] Fundamentals Part 5 (Objects)
+- [ ] PROJECT: Calculator
 
 **Primary Resource (Deep Mastery — After Odin Foundations):**
 
@@ -346,28 +338,26 @@ Performance (will-change, GPU acceleration)
 
 **What to Complete on JavaScript.info:**
 
-```
-Part 1: The JavaScript Language
-□ JavaScript Fundamentals (review + fill gaps)
-□ Code Quality
-□ Objects: The Basics
-□ Data Types
-□ Functions Advanced
-□ Object Properties Configuration
-□ Prototypes, Inheritance
-□ Classes
-□ Error Handling
-□ Promises, Async/Await
-□ Generators, Advanced Iteration
-□ Modules
+`Part 1: The JavaScript Language`
+- [ ] JavaScript Fundamentals (review + fill gaps)
+- [ ] Code Quality
+- [ ] Objects: The Basics
+- [ ] Data Types
+- [ ] Functions Advanced
+- [ ] Object Properties Configuration
+- [ ] Prototypes, Inheritance
+- [ ] Classes
+- [ ] Error Handling
+- [ ] Promises, Async/Await
+- [ ] Generators, Advanced Iteration
+- [ ] Modules
 
-Part 2: Browser
-□ Document (DOM)
-□ Introduction to Events
-□ UI Events
-□ Forms, Controls
-□ Storing Data in Browser
-```
+`Part 2: Browser`
+- [ ] Document (DOM)
+- [ ] Introduction to Events
+- [ ] UI Events
+- [ ] Forms, Controls
+- [ ] Storing Data in Browser
 
 **What You'll Learn (In Order):**
 
@@ -1503,4 +1493,4 @@ MONTH 9-10
 
 ---
 
-_Last Updated: [Date]_
+_Last Updated: [16-01-2026]_
