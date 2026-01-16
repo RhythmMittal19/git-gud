@@ -1,5 +1,8 @@
 ## Track A: Full-Stack Development
 
+> [!NOTE]
+> This course and learning path can feel very challenging, and I want to be honest—coding is not easy. However, nothing is impossible if you stay consistent. I won’t try to oversimplify things, because this roadmap is meant for people who truly want to grow and improve. It’s designed for learners who are ready to stay committed, put in regular effort, and focus on long-term progress.
+
 > **Goal:** Become employable/freelance-ready in 5-6 months
 > **Daily Time:** 8 hours
 > **End Result:** Portfolio with 5+ killer projects + ₹1-2L/month income
@@ -140,8 +143,8 @@ ARIA basics (roles, labels)
 - [ ] Day 14: Validate your HTML with W3C — zero errors
 - [ ] Day 14: Explain why semantic HTML matters without looking it up
 
-**Started:** **\_**
-**Completed:** **\_**
+**Started:** **16-01-2026**
+**Completed:** **16-01-2026**
 
 ---
 
@@ -339,6 +342,7 @@ Performance (will-change, GPU acceleration)
 **What to Complete on JavaScript.info:**
 
 `Part 1: The JavaScript Language`
+
 - [ ] JavaScript Fundamentals (review + fill gaps)
 - [ ] Code Quality
 - [ ] Objects: The Basics
@@ -353,6 +357,7 @@ Performance (will-change, GPU acceleration)
 - [ ] Modules
 
 `Part 2: Browser`
+
 - [ ] Document (DOM)
 - [ ] Introduction to Events
 - [ ] UI Events
