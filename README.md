@@ -383,14 +383,14 @@ ifconfig, ip
 
 **Resources:**
 
-| Resource                      | Purpose                     | Link                                                        |
-| ----------------------------- | --------------------------- | ----------------------------------------------------------- |
-| Linux Journey                 | Interactive beginner course | https://linuxjourney.com/                                   |
-| The Linux Command Line (Book) | Comprehensive, FREE         | https://linuxcommand.org/tlcl.php                           |
-| OverTheWire Bandit            | Gamified learning           | https://overthewire.org/wargames/bandit/                    |
-| Terminus Game                 | Terminal game for beginners | https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html |
-| ExplainShell                  | Understand any command      | https://explainshell.com/                                   |
-| tldr pages                    | Simplified man pages        | https://tldr.sh/                                            |
+| Resource                      | Purpose                               | Link                                                        |
+| ----------------------------- | ------------------------------------- | ----------------------------------------------------------- |
+| Linux Journey                 | Interactive beginner course           | https://labex.io/                                           |
+| The Linux Command Line (Book) | Comprehensive, FREE                   | https://linuxcommand.org/tlcl.php                           |
+| OverTheWire Bandit            | Gamified learning **_(Recommended)_** | https://overthewire.org/wargames/bandit/                    |
+| Terminus Game                 | Terminal game for beginners           | https://web.mit.edu/mprat/Public/web/Terminus/Web/main.html |
+| ExplainShell                  | Understand any command                | https://explainshell.com/                                   |
+| tldr pages                    | Simplified man pages                  | https://tldr.sh/                                            |
 
 **Practice Project:**
 Create a script that organizes your Downloads folder by file type automatically.
@@ -836,7 +836,6 @@ How you learn matters more than what you learn.
 **Learning Principles:**
 
 1. **Feynman Technique**
-
    - Study a concept
    - Explain it in simple terms (write it down)
    - Identify gaps in your explanation
@@ -844,13 +843,11 @@ How you learn matters more than what you learn.
    - Simplify further
 
 2. **Spaced Repetition**
-
    - Review after 1 day, 3 days, 7 days, 14 days, 30 days
    - Use Anki for key concepts
    - Make your own cards (making = learning)
 
 3. **Active Recall**
-
    - Don't re-read, test yourself
    - Close the book and try to remember
    - Struggle is good
@@ -933,13 +930,11 @@ Your second brain. Knowledge compounds only if captured.
 **The System:**
 
 1. **Daily Notes**
-
    - What I learned today
    - Questions that arose
    - Links to resources
 
 2. **Concept Notes**
-
    - One concept per note
    - Explain in your own words
    - Link to related concepts
@@ -1162,9 +1157,14 @@ Flexbox is for 1-dimensional layouts (row OR column).
 
 ```css
 /* Container */
-display: flex flex-direction, flex-wrap justify-content, align-items,
-  align-content gap /* Items */ flex-grow, flex-shrink, flex-basis flex
-    shorthand align-self, order;
+display:
+  flex flex-direction,
+  flex-wrap justify-content,
+  align-items,
+  align-content gap /* Items */ flex-grow,
+  flex-shrink,
+  flex-basis flex shorthand align-self,
+  order;
 ```
 
 _Day 4-7: CSS Grid_
@@ -1173,10 +1173,16 @@ Grid is for 2-dimensional layouts (rows AND columns).
 
 ```css
 /* Container */
-display: grid grid-template-columns, grid-template-rows grid-template-areas gap,
-  justify-items, align-items /* Items */ grid-column, grid-row grid-area
-    justify-self, align-self /* Functions */ repeat(), minmax(), fr unit
-    auto-fit, auto-fill;
+display:
+  grid grid-template-columns,
+  grid-template-rows grid-template-areas gap,
+  justify-items,
+  align-items /* Items */ grid-column,
+  grid-row grid-area justify-self,
+  align-self /* Functions */ repeat(),
+  minmax(),
+  fr unit auto-fit,
+  auto-fill;
 ```
 
 **Week 5: Advanced CSS**
@@ -1286,11 +1292,11 @@ replace, replaceAll
 _Day 4: Numbers & Math_
 
 ```javascript
-parseInt, parseFloat;
-Number.isNaN, Number.isFinite;
-toFixed, toPrecision;
-Math.floor, Math.ceil, Math.round;
-Math.random, Math.max, Math.min;
+(parseInt, parseFloat);
+(Number.isNaN, Number.isFinite);
+(toFixed, toPrecision);
+(Math.floor, Math.ceil, Math.round);
+(Math.random, Math.max, Math.min);
 ```
 
 _Day 5-6: Control Flow_
@@ -1466,9 +1472,9 @@ FormData API
 _Day 7: Browser APIs_
 
 ```javascript
-localStorage, sessionStorage;
+(localStorage, sessionStorage);
 fetch(GET, POST, PUT, DELETE);
-JSON.parse, JSON.stringify;
+(JSON.parse, JSON.stringify);
 ```
 
 **Projects:**
@@ -2551,7 +2557,7 @@ import jwt from "jsonwebtoken";
 const token = jwt.sign(
   { userId: user.id, email: user.email }, // Payload
   process.env.JWT_SECRET, // Secret (keep this safe!)
-  { expiresIn: "7d" } // Options
+  { expiresIn: "7d" }, // Options
 );
 
 // Send token to client
@@ -2838,7 +2844,7 @@ This is where Next.js gets powerful.
 // Server Components (default) — fetch data on the server
 async function ProductPage({ params }) {
   const product = await fetch(
-    `https://api.example.com/products/${params.id}`
+    `https://api.example.com/products/${params.id}`,
   ).then((r) => r.json());
 
   return <div>{product.name}</div>;
@@ -2856,7 +2862,7 @@ export default function Counter() {
 // Static Generation — generate pages at build time
 export async function generateStaticParams() {
   const products = await fetch("https://api.example.com/products").then((r) =>
-    r.json()
+    r.json(),
   );
   return products.map((p) => ({ slug: p.slug }));
 }
