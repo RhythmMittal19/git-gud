@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Switcher</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!-- Theme Toggle Header -->
+      <header class="header">
+        <div class="logo">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text">ThemeFlow</span>
+        </div>
+
+        <div class="theme-controls">
+          <!-- Theme Toggle Button -->
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle theme"
+          >
+            <span class="icon sun-icon">☀️</span>
+            <span class="icon moon-icon">🌙</span>
+            <span class="toggle-slider"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <section class="hero">
+          <h1>
+            Beautiful Themes,<br /><span class="gradient-text"
+              >Seamless Experience</span
+            >
+          </h1>
+          <p class="hero-subtitle">
+            Toggle between light and dark mode. Your preference is saved
+            automatically!
+          </p>
+
+          <div class="cta-buttons">
+            <button class="btn btn-primary">Get Started</button>
+            <button class="btn btn-secondary">Learn More</button>
+          </div>
+        </section>
+
+        <!-- Theme Palette Selector -->
+        <section class="palette-section">
+          <h2>Choose Your Accent Color</h2>
+          <div class="palette-grid" id="paletteGrid">
+            <button
+              class="palette-btn active"
+              data-accent="purple"
+              aria-label="Purple theme"
+            >
+              <span
+                class="palette-color"
+                style="background: linear-gradient(135deg, #667eea, #764ba2)"
+              ></span>
+              <span class="palette-name">Purple</span>
+            </button>
+            <button
+              class="palette-btn"
+              data-accent="blue"
+              aria-label="Blue theme"
+            >
+              <span
+                class="palette-color"
+                style="background: linear-gradient(135deg, #4facfe, #00f2fe)"
+              ></span>
+              <span class="palette-name">Ocean</span>
+            </button>
+            <button
+              class="palette-btn"
+              data-accent="green"
+              aria-label="Green theme"
+            >
+              <span
+                class="palette-color"
+                style="background: linear-gradient(135deg, #11998e, #38ef7d)"
+              ></span>
+              <span class="palette-name">Forest</span>
+            </button>
+            <button
+              class="palette-btn"
+              data-accent="orange"
+              aria-label="Orange theme"
+            >
+              <span
+                class="palette-color"
+                style="background: linear-gradient(135deg, #f093fb, #f5576c)"
+              ></span>
+              <span class="palette-name">Sunset</span>
+            </button>
+            <button
+              class="palette-btn"
+              data-accent="red"
+              aria-label="Red theme"
+            >
+              <span
+                class="palette-color"
+                style="background: linear-gradient(135deg, #eb3349, #f45c43)"
+              ></span>
+              <span class="palette-name">Cherry</span>
+            </button>
+            <button
+              class="palette-btn"
+              data-accent="teal"
+              aria-label="Teal theme"
+            >
+              <span
+                class="palette-color"
+                style="background: linear-gradient(135deg, #00b4db, #0083b0)"
+              ></span>
+              <span class="palette-name">Teal</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Demo Cards -->
+        <section class="cards-section">
+          <h2>Preview Components</h2>
+          <div class="cards-grid">
+            <div class="card">
+              <div class="card-icon">🚀</div>
+              <h3>Fast Performance</h3>
+              <p>Lightning quick theme switching with zero page reload.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">💾</div>
+              <h3>Persistent Storage</h3>
+              <p>Your preferences are saved locally and remembered forever.</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🎨</div>
+              <h3>Multiple Palettes</h3>
+              <p>Choose from beautiful color schemes to match your style.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>Built with 💜 for learning JavaScript</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
