@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="grocery-container">
+      <h1>🛒 Grocery List</h1>
+
+      <div class="input-section">
+        <input type="text" id="grocery-input" placeholder="Add item..." />
+        <button id="add-btn">Add</button>
+      </div>
+
+      <p class="item-count"><span id="count">0</span> items</p>
+
+      <ul class="grocery-list" id="grocery-list">
+        <!-- Items will be added here -->
+      </ul>
+
+      <p class="empty-message" id="empty-message">
+        Your list is empty! Start adding items 🥕
+      </p>
+
+      <button id="clear-btn" class="clear-btn">Clear All</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

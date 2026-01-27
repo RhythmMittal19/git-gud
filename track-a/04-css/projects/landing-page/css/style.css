@@ -1,0 +1,191 @@
+/* GLOBAL RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-size: 18px;
+}
+
+button {
+  background-color: #3882f6;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* HEADER & HERO CONTAINER (Dark Background) */
+.header-container {
+  background-color: #1f2937;
+  color: white;
+  padding: 20px 15%; /* Keeps content centered with gutters */
+}
+
+/* Header Flexbox */
+header {
+  display: flex;
+  justify-content: space-between; /* Pushes logo left, links right */
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f9faf8;
+}
+
+header ul {
+  display: flex;
+  gap: 20px; /* Space between links */
+}
+
+/* Hero Flexbox */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0;
+  gap: 50px;
+}
+
+.hero-left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero-left h1 {
+  font-size: 48px;
+  font-weight: 900;
+  color: #f9faf8;
+  margin-bottom: 10px;
+}
+
+.hero-left p {
+  font-size: 18px;
+  color: #e5e7eb;
+  margin-bottom: 20px;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.image-placeholder {
+  background-color: gray;
+  color: white;
+  width: 500px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* INFO SECTION */
+.info-section {
+  padding: 50px 15%;
+  text-align: center;
+}
+
+.info-section h2 {
+  font-size: 36px;
+  font-weight: 900;
+  color: #1f2937;
+  margin-bottom: 40px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Good habit, though not strictly needed for fixed design */
+}
+
+.card {
+  width: 150px;
+  text-align: center;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  border: 4px solid #3882f6;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+}
+
+/* QUOTE SECTION */
+.quote-section {
+  background-color: #e5e7eb;
+  padding: 100px 20%;
+}
+
+.quote-text {
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 300;
+  color: #1f2937;
+}
+
+.quote-author {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 10px;
+}
+
+/* CTA SECTION */
+.cta-section {
+  padding: 100px 15%;
+}
+
+.cta-container {
+  background-color: #3882f6;
+  color: white;
+  padding: 50px 100px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cta-text h3 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.cta-button {
+  border: 2px solid white;
+}
+
+/* FOOTER */
+footer {
+  background-color: #1f2937;
+  color: white;
+  text-align: center;
+  padding: 40px;
+}

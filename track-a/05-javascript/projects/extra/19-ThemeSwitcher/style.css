@@ -1,0 +1,472 @@
+/* ═══════════════════════════════════════════════════════════
+   CSS VARIABLES - The Magic of Theming!
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* Default (Light Theme) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --border-color: #e2e8f0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
+
+  /* Default Accent (Purple) */
+  --accent-primary: #667eea;
+  --accent-secondary: #764ba2;
+  --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --accent-glow: rgba(102, 126, 234, 0.3);
+
+  /* Transitions */
+  --transition-speed: 0.3s;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DARK THEME
+   ═══════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-tertiary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --card-bg: #1e293b;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ACCENT COLOR PALETTES
+   ═══════════════════════════════════════════════════════════ */
+
+[data-accent="purple"] {
+  --accent-primary: #667eea;
+  --accent-secondary: #764ba2;
+  --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --accent-glow: rgba(102, 126, 234, 0.3);
+}
+
+[data-accent="blue"] {
+  --accent-primary: #4facfe;
+  --accent-secondary: #00f2fe;
+  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --accent-glow: rgba(79, 172, 254, 0.3);
+}
+
+[data-accent="green"] {
+  --accent-primary: #11998e;
+  --accent-secondary: #38ef7d;
+  --accent-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  --accent-glow: rgba(17, 153, 142, 0.3);
+}
+
+[data-accent="orange"] {
+  --accent-primary: #f093fb;
+  --accent-secondary: #f5576c;
+  --accent-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --accent-glow: rgba(240, 147, 251, 0.3);
+}
+
+[data-accent="red"] {
+  --accent-primary: #eb3349;
+  --accent-secondary: #f45c43;
+  --accent-gradient: linear-gradient(135deg, #eb3349 0%, #f45c43 100%);
+  --accent-glow: rgba(235, 51, 73, 0.3);
+}
+
+[data-accent="teal"] {
+  --accent-primary: #00b4db;
+  --accent-secondary: #0083b0;
+  --accent-gradient: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
+  --accent-glow: rgba(0, 180, 219, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BASE STYLES
+   ═══════════════════════════════════════════════════════════ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color var(--transition-speed),
+    color var(--transition-speed);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════════════════════ */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  transition: background-color var(--transition-speed),
+    border-color var(--transition-speed);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  font-size: 1.75rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   THEME TOGGLE SWITCH
+   ═══════════════════════════════════════════════════════════ */
+
+.theme-toggle {
+  position: relative;
+  width: 70px;
+  height: 36px;
+  border-radius: 50px;
+  border: none;
+  background: var(--bg-tertiary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: background-color var(--transition-speed);
+  box-shadow: inset 0 2px 4px var(--shadow-color);
+}
+
+.theme-toggle .icon {
+  position: absolute;
+  font-size: 1rem;
+  transition: opacity var(--transition-speed), transform var(--transition-speed);
+  z-index: 1;
+}
+
+.sun-icon {
+  left: 8px;
+  opacity: 1;
+}
+
+.moon-icon {
+  right: 8px;
+  opacity: 0.4;
+}
+
+.toggle-slider {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: var(--accent-gradient);
+  border-radius: 50%;
+  left: 4px;
+  transition: transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+  box-shadow: 0 2px 8px var(--accent-glow);
+}
+
+/* Dark mode toggle state */
+[data-theme="dark"] .toggle-slider {
+  transform: translateX(34px);
+}
+
+[data-theme="dark"] .sun-icon {
+  opacity: 0.4;
+}
+
+[data-theme="dark"] .moon-icon {
+  opacity: 1;
+}
+
+.theme-toggle:hover .toggle-slider {
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MAIN CONTENT
+   ═══════════════════════════════════════════════════════════ */
+
+.main-content {
+  flex: 1;
+  padding: 4rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.hero {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════════════════════ */
+
+.btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--accent-gradient);
+  color: white;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px var(--accent-glow);
+}
+
+.btn-secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--border-color);
+  transform: translateY(-3px);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PALETTE SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.palette-section {
+  margin-bottom: 5rem;
+}
+
+.palette-section h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.palette-grid {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.palette-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.palette-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.palette-btn.active {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.palette-color {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.palette-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CARDS SECTION
+   ═══════════════════════════════════════════════════════════ */
+
+.cards-section h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s,
+    background-color var(--transition-speed),
+    border-color var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px var(--shadow-color);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════ */
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  transition: background-color var(--transition-speed),
+    border-color var(--transition-speed);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.5rem;
+  }
+
+  .main-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .palette-btn {
+    padding: 0.75rem;
+  }
+
+  .palette-color {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    display: none;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Industrial Orange Workspace | Construct Pro</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- ========================================
+             SIDEBAR NAVIGATION
+             ======================================== -->
+      <nav id="sidebar" class="sidebar">
+        <!-- Logo Section -->
+        <div class="sidebar-header">
+          <div class="logo-icon">
+            <span class="material-symbols-outlined">architecture</span>
+          </div>
+          <div class="logo-text">
+            <h1 class="logo-title">Construct</h1>
+            <span class="logo-version">PRO TOOLS v2.0</span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="sidebar-nav">
+          <a
+            href="#"
+            class="nav-item nav-item--active"
+            data-section="workspace"
+          >
+            <span class="material-symbols-outlined">grid_on</span>
+            <span class="nav-label">Workspace</span>
+          </a>
+          <a href="#" class="nav-item" data-section="blueprints">
+            <span class="material-symbols-outlined">bookmark</span>
+            <span class="nav-label">Blueprints</span>
+          </a>
+          <a href="#" class="nav-item" data-section="tags">
+            <span class="material-symbols-outlined">tag</span>
+            <span class="nav-label">Tags</span>
+          </a>
+          <a href="#" class="nav-item" data-section="archive">
+            <span class="material-symbols-outlined">inventory_2</span>
+            <span class="nav-label">Archive</span>
+          </a>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+          <button id="trash-btn" class="nav-item nav-item--trash">
+            <span class="material-symbols-outlined">delete_outline</span>
+            <span class="nav-label">Trash</span>
+          </button>
+
+          <div class="sidebar-divider"></div>
+
+          <div class="user-profile">
+            <div class="user-avatar" id="user-avatar">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAd6ugayPq2Jscut01KzBcEiENOVFHjM-7NECZVRdUVeY_rFehOrctfPTUE8ZT59B3WdNsnSqRGoX-OQ-kDLfNlyAupnGM21oZzUr81K0VJRovcDGwFGxVtfpCHEQf40tC7UnWkLt5uw63BG7hmx4m5lNRLYKmKZwB2O4qv4duBAD_16BnJZhGZPGQ2P8rWr1vVQFZOtEI83cm4yPMD1BEAW1qqXI49nwnbEoK2pSAEstU4yTiFNc5hMIAGdnI_Xqy6MyO_dFintYo"
+                alt="User Avatar"
+              />
+            </div>
+            <div class="user-info">
+              <span class="user-name">S. Connor</span>
+              <span class="user-role">ENGINEER</span>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- ========================================
+             MAIN CONTENT AREA
+             ======================================== -->
+      <main id="main-content" class="main-content">
+        <!-- Sticky Header / Search Bar -->
+        <header id="main-header" class="main-header">
+          <div class="header-container">
+            <div class="search-wrapper">
+              <span class="material-symbols-outlined search-icon">search</span>
+              <input
+                type="text"
+                id="search-input"
+                class="search-input"
+                placeholder="SEARCH DATABASE..."
+                aria-label="Search notes"
+              />
+            </div>
+            <div class="header-actions">
+              <button
+                id="filter-btn"
+                class="header-btn"
+                aria-label="Filter options"
+              >
+                <span class="material-symbols-outlined">tune</span>
+              </button>
+              <button id="new-note-btn" class="btn-primary">
+                <span class="material-symbols-outlined">add</span>
+                <span>New Note</span>
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Canvas / Notes Area -->
+        <div id="canvas-area" class="canvas-area">
+          <!-- Note Card: Image Type -->
+          <article
+            class="note-card note-card--image"
+            data-id="note-1"
+            data-type="image"
+            style="top: 120px; left: 80px"
+          >
+            <div class="note-image">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAuxsfvqytp3K7nRCuv0e3o40FFC3UCTGLFlZ9QDZmTv1quvHq-83GgyljEBdSEpXcQKgjFLK7-a9Ju480W1VXUmK3vleGBm_jesXW-AJCZRZGSTKqhDyVyLbCduA9wqglawbOB3S825IwrZ2rU_806EYB6QONKPVPA67kbmlI0RNH394NgUVxzAX0-prcEovqi3ca5F8QtjTEnPVb4vDD7VcS3sx3bcFL62CBmJnlBA6o9xJm0A1jLm4aYPoPRpSLD-NqmCo3ls47"
+                alt="Abstract vibrant geometric shapes"
+              />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="note-body">
+              <h3 class="note-title">Concept Ref.</h3>
+              <p class="note-text">
+                Q4 visual targets. High contrast required.
+              </p>
+              <div class="note-footer">
+                <span class="note-tag">#DESIGN</span>
+                <button class="note-menu-btn" aria-label="Note options">
+                  <span class="material-symbols-outlined">more_horiz</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Note Card: Checklist/Todo Type -->
+          <article
+            class="note-card note-card--checklist"
+            data-id="note-2"
+            data-type="checklist"
+            style="top: 180px; left: 420px"
+          >
+            <div class="pin-tack"></div>
+            <div class="note-body">
+              <div class="note-header-row">
+                <h3 class="note-title">Project Alpha</h3>
+                <span class="note-date">09/24</span>
+              </div>
+              <ul id="checklist-note-2" class="checklist">
+                <li class="checklist-item checklist-item--completed">
+                  <label class="checkbox-wrapper">
+                    <input type="checkbox" checked />
+                    <span class="checkbox-custom">
+                      <span class="material-symbols-outlined">check</span>
+                    </span>
+                  </label>
+                  <span class="checklist-text">Initial specs</span>
+                </li>
+                <li class="checklist-item">
+                  <label class="checkbox-wrapper">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                  </label>
+                  <span class="checklist-text">Core features definition</span>
+                </li>
+                <li class="checklist-item">
+                  <label class="checkbox-wrapper">
+                    <input type="checkbox" />
+                    <span class="checkbox-custom"></span>
+                  </label>
+                  <span class="checklist-text">Wireframe dashboard</span>
+                </li>
+              </ul>
+            </div>
+            <div class="note-assignees">
+              <div class="assignee-avatar">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2QhCin6JshMW6nF6PlVECs5iDLm6YeIQngVd7VEH755eKsZSIK77Q_RyVzmq4gX_p_aaL1tQzE3eGRPowafoODSAlwe8RjIsN1t-dpkTf0FB-VFeaGNRNt5qDYX9WdeMjCgqX8INjaE2RkNHtUkqBhvmdzV-0dnSO3kACQZHSRYSqrsDYMBM_oc_Kg2GkLZbN8MyOOJSIfbVbNOog4LzLmRYa-mR4dXeyM4EvHLhE74ps_MiAfRSI4wbMJOCEJPJpTFocfVdlO2y-"
+                  alt="Team member Mike"
+                />
+              </div>
+              <button class="add-assignee-btn" aria-label="Add assignee">
+                <span class="material-symbols-outlined">add</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Note Card: Quote Type -->
+          <article
+            class="note-card note-card--quote"
+            data-id="note-3"
+            data-type="quote"
+            style="top: 480px; left: 100px"
+          >
+            <span class="quote-icon material-symbols-outlined"
+              >format_quote</span
+            >
+            <div class="note-body">
+              <blockquote class="quote-text">
+                "Creativity is intelligence having fun."
+              </blockquote>
+              <div class="quote-divider"></div>
+              <cite class="quote-author">— Albert Einstein</cite>
+            </div>
+          </article>
+
+          <!-- Note Card: Location/Map Type -->
+          <article
+            class="note-card note-card--location"
+            data-id="note-4"
+            data-type="location"
+            style="top: 380px; left: 780px"
+          >
+            <div class="note-map">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-ihNxGQQtay1Qw1q3r35Rnyxddrxci7HCLdoDu9o_THAK3DvITHketjZ5iaBsrExQuGOQsHfVZXalCPrZCzmMECkEGpMH1CBXXqo277IK8A2mHLCgp3ZWTr5WeQZyV2ckopNnrbWL2WtwAe16Ru4jtB3Riv1ByImBRkc6GzXKp6mNnYHhoVUx_uP6z7vtaL7lStFViidDYuyNjwuaqsAYKMKFUxF_--865IkhYeCV_FvPCqMkkG96I7o7Poi5Cv3xvHUMt5f2ToHq"
+                alt="Map view of Tokyo streets"
+              />
+              <button class="map-nav-btn" aria-label="Navigate">
+                <span class="material-symbols-outlined">near_me</span>
+              </button>
+            </div>
+            <div class="note-body">
+              <h3 class="note-title">Rendezvous</h3>
+              <p class="note-text">Shibuya Crossing. Bring prototypes.</p>
+              <div class="note-tags">
+                <span class="tag tag--urgent">Urgent</span>
+                <span class="tag tag--default">Logistics</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Note Card: Audio/Voice Memo Type -->
+          <article
+            class="note-card note-card--audio"
+            data-id="note-5"
+            data-type="audio"
+            style="top: 90px; left: 820px"
+          >
+            <div class="note-body">
+              <div class="audio-header">
+                <div class="audio-icon-wrapper">
+                  <span class="material-symbols-outlined">mic</span>
+                </div>
+                <span class="audio-title">Site Report</span>
+                <span class="audio-duration">12:04</span>
+              </div>
+              <div class="audio-waveform">
+                <span class="wave-bar" style="height: 12px"></span>
+                <span
+                  class="wave-bar wave-bar--accent"
+                  style="height: 24px"
+                ></span>
+                <span
+                  class="wave-bar wave-bar--dark"
+                  style="height: 20px"
+                ></span>
+                <span class="wave-bar" style="height: 8px"></span>
+                <span
+                  class="wave-bar wave-bar--accent"
+                  style="height: 32px"
+                ></span>
+                <span
+                  class="wave-bar wave-bar--dark"
+                  style="height: 16px"
+                ></span>
+                <span class="wave-bar" style="height: 8px"></span>
+                <span
+                  class="wave-bar wave-bar--accent"
+                  style="height: 20px"
+                ></span>
+                <span class="wave-bar" style="height: 12px"></span>
+                <span class="wave-progress"></span>
+              </div>
+              <div class="audio-controls">
+                <button
+                  id="play-btn-note-5"
+                  class="audio-play-btn"
+                  aria-label="Play audio"
+                >
+                  <span class="material-symbols-outlined">play_arrow</span>
+                </button>
+                <button class="audio-delete-btn" aria-label="Delete audio">
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Floating Controls -->
+        <div class="floating-controls">
+          <div class="zoom-controls">
+            <button id="zoom-in-btn" class="zoom-btn" aria-label="Zoom in">
+              <span class="material-symbols-outlined">add</span>
+            </button>
+            <div class="zoom-divider"></div>
+            <button id="zoom-out-btn" class="zoom-btn" aria-label="Zoom out">
+              <span class="material-symbols-outlined">remove</span>
+            </button>
+          </div>
+          <button id="help-btn" class="help-btn" aria-label="Help">
+            <span class="material-symbols-outlined">question_mark</span>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <!-- ========================================
+         CREATE NOTE MODAL
+         ======================================== -->
+    <div id="create-note-modal" class="modal">
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <header class="modal-header">
+          <h2 class="modal-title">
+            <span class="material-symbols-outlined">add_circle</span>
+            Create New Note
+          </h2>
+          <button
+            id="modal-close-btn"
+            class="modal-close"
+            aria-label="Close modal"
+          >
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </header>
+        <form id="create-note-form" class="modal-body">
+          <div class="form-group">
+            <label for="note-type-select" class="form-label">Note Type</label>
+            <div class="type-selector">
+              <label class="type-option">
+                <input type="radio" name="note-type" value="text" checked />
+                <span class="type-icon">
+                  <span class="material-symbols-outlined">article</span>
+                </span>
+                <span class="type-label">Text</span>
+              </label>
+              <label class="type-option">
+                <input type="radio" name="note-type" value="checklist" />
+                <span class="type-icon">
+                  <span class="material-symbols-outlined">checklist</span>
+                </span>
+                <span class="type-label">Checklist</span>
+              </label>
+              <label class="type-option">
+                <input type="radio" name="note-type" value="image" />
+                <span class="type-icon">
+                  <span class="material-symbols-outlined">image</span>
+                </span>
+                <span class="type-label">Image</span>
+              </label>
+              <label class="type-option">
+                <input type="radio" name="note-type" value="audio" />
+                <span class="type-icon">
+                  <span class="material-symbols-outlined">mic</span>
+                </span>
+                <span class="type-label">Audio</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="note-title-input" class="form-label">Title</label>
+            <input
+              type="text"
+              id="note-title-input"
+              class="form-input"
+              placeholder="Enter note title..."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="note-content-input" class="form-label">Content</label>
+            <textarea
+              id="note-content-input"
+              class="form-textarea"
+              placeholder="Enter note content..."
+              rows="4"
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="note-tag-input" class="form-label">Tag</label>
+            <input
+              type="text"
+              id="note-tag-input"
+              class="form-input"
+              placeholder="#TAG"
+            />
+          </div>
+
+          <div class="form-actions">
+            <button type="button" id="cancel-note-btn" class="btn-secondary">
+              Cancel
+            </button>
+            <button type="submit" id="save-note-btn" class="btn-primary">
+              <span class="material-symbols-outlined">save</span>
+              Save Note
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ========================================
+         CONTEXT MENU (for right-click on notes)
+         ======================================== -->
+    <div id="context-menu" class="context-menu">
+      <button class="context-item" data-action="edit">
+        <span class="material-symbols-outlined">edit</span>
+        <span>Edit</span>
+      </button>
+      <button class="context-item" data-action="duplicate">
+        <span class="material-symbols-outlined">content_copy</span>
+        <span>Duplicate</span>
+      </button>
+      <button class="context-item" data-action="pin">
+        <span class="material-symbols-outlined">push_pin</span>
+        <span>Pin to Top</span>
+      </button>
+      <div class="context-divider"></div>
+      <button class="context-item" data-action="archive">
+        <span class="material-symbols-outlined">inventory_2</span>
+        <span>Archive</span>
+      </button>
+      <button class="context-item context-item--danger" data-action="delete">
+        <span class="material-symbols-outlined">delete</span>
+        <span>Delete</span>
+      </button>
+    </div>
+  </body>
+</html>
