@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 // TACTICAL COUNTER</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Inter for UI, JetBrains Mono for the Number -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-stage">
+      <!-- THE DEVICE -->
+      <div class="counter-device">
+        <!-- HEADER / BRANDING -->
+        <header class="device-header">
+          <div class="brand-tag">
+            <span class="icon-warning material-symbols-outlined">warning</span>
+            <span>UNIT_02</span>
+          </div>
+          <div class="status-light">
+            <span>ACTIVE</span>
+            <div class="led-blink"></div>
+          </div>
+        </header>
+
+        <!-- THE SCREEN (Deep Black Void) -->
+        <div class="screen-bezel">
+          <div class="screen-glare"></div>
+          <div class="screen-content">
+            <div class="screen-meta">
+              <span class="label">CURRENT COUNT</span>
+              <span class="label">x10</span>
+            </div>
+            <!-- THE NUMBER -->
+            <h1 id="count-display">0</h1>
+          </div>
+          <!-- Scanlines overlay -->
+          <div class="scanlines"></div>
+        </div>
+
+        <!-- THE CONTROLS (Tactile Buttons) -->
+        <div class="control-panel">
+          <!-- DECREASE -->
+          <button id="btn-dec" class="tactile-btn secondary">
+            <span class="material-symbols-outlined">remove</span>
+          </button>
+
+          <!-- RESET (Safety Striped) -->
+          <button id="btn-reset" class="tactile-btn warning">
+            <span>RESET</span>
+          </button>
+
+          <!-- INCREASE (The Big Orange One) -->
+          <button id="btn-inc" class="tactile-btn primary">
+            <span class="material-symbols-outlined">add</span>
+          </button>
+        </div>
+
+        <!-- FOOTER INFO -->
+        <div class="device-footer">
+          <div class="specs">
+            <span>MAX: 9999</span>
+            <span>LATENCY: 0ms</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Link your JS file here -->
+    <script src="script.js"></script>
+  </body>
+</html>

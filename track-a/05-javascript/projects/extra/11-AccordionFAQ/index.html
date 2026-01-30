@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11 // CORE_V2</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Inter (Display) & JetBrains Mono (Technical) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ATMOSPHERE LAYERS -->
+    <div class="grid-background"></div>
+    <div class="scanlines"></div>
+
+    <!-- UI HEADER -->
+    <header class="hud-header">
+      <div class="status-group">
+        <div class="status-light">
+          <div class="ping"></div>
+          <div class="dot"></div>
+        </div>
+        <span class="status-text">SYSTEM_READY</span>
+      </div>
+
+      <div class="center-metrics">
+        <div class="metric">
+          <span class="material-symbols-outlined icon">terminal</span>
+          <span>CMD_ROOT</span>
+        </div>
+        <div class="metric">
+          <span class="material-symbols-outlined icon">wifi_tethering</span>
+          <span>NET_SECURE</span>
+        </div>
+      </div>
+
+      <div class="actions-group">
+        <h2 class="brand">CORE_V2</h2>
+        <button class="btn-access">
+          ACCESS <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- MAIN ACCORDION -->
+    <main class="accordion-container">
+      <!-- ITEM 01: STRATEGY (Active by default for demo) -->
+      <div class="acc-item active">
+        <div class="acc-header">
+          <div class="header-left">
+            <span class="index">01_</span>
+            <h2 class="title">STRATEGY</h2>
+          </div>
+          <div class="header-right">
+            <div class="expand-icon">
+              <span class="material-symbols-outlined">expand_more</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-content">
+          <div class="content-grid">
+            <!-- Left: Text Data -->
+            <div class="col-text">
+              <div class="directive-tag">
+                <span class="square"></span> DIRECTIVE_ALPHA
+              </div>
+              <h3 class="headline">
+                Architecture for the <br /><span class="highlight"
+                  >digital frontier</span
+                >.
+              </h3>
+              <p class="description">
+                >> Initializing data-driven protocols. We dissect market signals
+                to construct resilient brand architectures capable of weathering
+                high-velocity shifts.
+              </p>
+              <div class="data-table">
+                <div class="data-point">
+                  <label>TARGET</label>
+                  <span>Apex Systems</span>
+                </div>
+                <div class="data-point">
+                  <label>SECTOR</label>
+                  <span>AI / FinTech</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Image HUD -->
+            <div class="col-visual">
+              <div class="hud-overlay">
+                <div class="hud-top">
+                  <div class="bars">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span class="img-id">IMG_8922_RENDER</span>
+                </div>
+                <div class="hud-bottom">
+                  <span class="coords"
+                    >X: 44.20 <br />
+                    Y: 12.91</span
+                  >
+                  <div class="fig-tag">
+                    <span class="blink">●</span> FIG 1.0 // RENDERING
+                  </div>
+                </div>
+              </div>
+              <!-- Placeholder Image -->
+              <img
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop"
+                alt="Strategy Visual"
+              />
+              <div class="img-gradient"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM 02: DESIGN -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <div class="header-left">
+            <span class="index">02_</span>
+            <h2 class="title">DESIGN</h2>
+          </div>
+          <div class="header-right">
+            <div class="expand-icon">
+              <span class="material-symbols-outlined">expand_more</span>
+            </div>
+          </div>
+        </div>
+        <div class="acc-content">
+          <div class="content-grid">
+            <div class="col-text">
+              <div class="directive-tag">
+                <span class="square"></span> DIRECTIVE_BETA
+              </div>
+              <h3 class="headline">
+                Visual language, <br /><span class="highlight"
+                  >no compromise</span
+                >.
+              </h3>
+              <p class="description">
+                >> Reducing noise. Amplifying signal. We create direct,
+                high-bandwidth communication lines between product and user.
+              </p>
+            </div>
+            <div class="col-visual">
+              <img
+                src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2670&auto=format&fit=crop"
+                alt="Design Visual"
+              />
+              <div class="hud-overlay">
+                <div class="hud-bottom">
+                  <div class="fig-tag">
+                    <span class="blink">●</span> FIG 2.0 // INTERFACE
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM 03: BUILD -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <div class="header-left">
+            <span class="index">03_</span>
+            <h2 class="title">BUILD</h2>
+          </div>
+          <div class="header-right">
+            <div class="expand-icon">
+              <span class="material-symbols-outlined">expand_more</span>
+            </div>
+          </div>
+        </div>
+        <div class="acc-content">
+          <div class="content-grid">
+            <div class="col-text">
+              <div class="directive-tag">
+                <span class="square"></span> DIRECTIVE_GAMMA
+              </div>
+              <h3 class="headline">
+                Engineering at the <br /><span class="highlight"
+                  >speed of light</span
+                >.
+              </h3>
+              <p class="description">
+                >> Executing robust, scalable stacks. Our engineering unit
+                translates vision into binary reality with zero latency.
+              </p>
+            </div>
+            <div class="col-visual">
+              <img
+                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop"
+                alt="Build Visual"
+              />
+              <div class="hud-overlay">
+                <div class="hud-bottom">
+                  <div class="fig-tag">
+                    <span class="blink">●</span> FIG 3.0 // KERNEL
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ITEM 04: SCALE -->
+      <div class="acc-item">
+        <div class="acc-header">
+          <div class="header-left">
+            <span class="index">04_</span>
+            <h2 class="title">SCALE</h2>
+          </div>
+          <div class="header-right">
+            <div class="expand-icon">
+              <span class="material-symbols-outlined">expand_more</span>
+            </div>
+          </div>
+        </div>
+        <div class="acc-content">
+          <div class="content-grid">
+            <div class="col-text">
+              <div class="directive-tag">
+                <span class="square"></span> DIRECTIVE_DELTA
+              </div>
+              <h3 class="headline">
+                Growth mechanics for <br /><span class="highlight"
+                  >global reach</span
+                >.
+              </h3>
+              <p class="description">
+                >> Establishing trajectory. We deploy infrastructure and growth
+                strategies required to scale systems to millions.
+              </p>
+            </div>
+            <div class="col-visual">
+              <img
+                src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop"
+                alt="Scale Visual"
+              />
+              <div class="hud-overlay">
+                <div class="hud-bottom">
+                  <div class="fig-tag">
+                    <span class="blink">●</span> FIG 4.0 // TRAJECTORY
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER MARQUEE -->
+    <footer class="hud-footer">
+      <div class="marquee">
+        <div class="marquee-inner">
+          STRATEGY • DIGITAL • TECH • DESIGN • FUTURE • SCALE • PRECISION •
+          IMPACT • STRATEGY • DIGITAL • TECH • DESIGN • FUTURE • SCALE •
+          PRECISION • IMPACT •
+        </div>
+      </div>
+      <div class="footer-meta">
+        <span>© 2026 CORE_V2</span>
+        <span class="status-green">SYSTEM ALL GREEN</span>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

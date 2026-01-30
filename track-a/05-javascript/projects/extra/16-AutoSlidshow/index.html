@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Slideshow</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="slideshow-container">
+      <!-- Slides -->
+      <div class="slide active">
+        <img src="https://picsum.photos/id/10/800/400" alt="Slide 1" />
+        <div class="slide-caption">
+          <h2>Mountain Adventure</h2>
+          <p>Explore the heights of nature</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="https://picsum.photos/id/20/800/400" alt="Slide 2" />
+        <div class="slide-caption">
+          <h2>Ocean Vibes</h2>
+          <p>Feel the calm of the sea</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="https://picsum.photos/id/30/800/400" alt="Slide 3" />
+        <div class="slide-caption">
+          <h2>Forest Escape</h2>
+          <p>Get lost in the wilderness</p>
+        </div>
+      </div>
+
+      <div class="slide">
+        <img src="https://picsum.photos/id/40/800/400" alt="Slide 4" />
+        <div class="slide-caption">
+          <h2>City Lights</h2>
+          <p>Experience urban magic</p>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="arrow arrow-left" id="prevBtn">&#10094;</button>
+      <button class="arrow arrow-right" id="nextBtn">&#10095;</button>
+
+      <!-- Dots Navigation -->
+      <div class="dots-container">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
+      </div>
+
+      <!-- Play/Pause Button -->
+      <button class="play-pause-btn" id="playPauseBtn">⏸️</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,262 @@
+/* --- 1. CONFIGURATION --- */
+:root {
+  --bg-dark: #0a0a0a;
+  --orange: #ff4500; /* Safety Orange */
+  --white: #ffffff;
+  --black: #000000;
+  --screen-bg: #0f1110;
+  --gray-light: #e5e5e5;
+
+  --font-ui: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Neo-Brutalist Shadow Vars */
+  --shadow-hard: 8px 8px 0px var(--black);
+  --shadow-hover: 12px 12px 0px var(--black);
+  --shadow-active: 4px 4px 0px var(--black);
+  --border-thick: 3px solid var(--black);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: var(--font-ui);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Grid background pattern */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* --- 2. THE DEVICE CONTAINER --- */
+.counter-device {
+  background-color: var(--white);
+  width: 400px;
+  border: var(--border-thick);
+  /* The "Pop" Shadow */
+  box-shadow: var(--shadow-hard);
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+/* Hovering the whole device lifts it slightly */
+.counter-device:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* --- 3. HEADER --- */
+.device-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.brand-tag {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--black);
+  color: var(--white);
+  padding: 4px 8px;
+}
+.icon-warning {
+  font-size: 16px;
+  color: var(--orange);
+}
+
+.status-light {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--black);
+}
+
+.led-blink {
+  width: 10px;
+  height: 10px;
+  background-color: var(--orange);
+  border: 2px solid var(--black);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+/* --- 4. THE SCREEN (OLED Look) --- */
+.screen-bezel {
+  background-color: var(--screen-bg);
+  border: var(--border-thick);
+  height: 180px;
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Inner Glow/Glare effect */
+.screen-glare {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+/* Scanlines Texture */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.2) 50%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.screen-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+}
+
+.screen-meta {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+}
+
+.label {
+  color: #444;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+/* THE NUMBER */
+#count-display {
+  color: var(--white);
+  font-family: var(--font-mono);
+  font-size: 5rem;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(255, 69, 0, 0.5); /* Orange Glow */
+}
+
+/* --- 5. CONTROLS (Tactile Buttons) --- */
+.control-panel {
+  display: grid;
+  grid-template-columns: 80px 1fr 80px; /* Small - Big - Small */
+  gap: 1rem;
+  height: 80px;
+}
+
+.tactile-btn {
+  position: relative;
+  border: var(--border-thick);
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-weight: 900;
+  transition: all 0.1s cubic-bezier(0.4, 0, 1, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Default Shadow */
+  box-shadow: 4px 4px 0px var(--black);
+}
+
+/* Button Push Interaction */
+.tactile-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--black);
+}
+
+/* STYLES: Decrease (White) */
+.secondary {
+  background: var(--white);
+  color: var(--black);
+}
+.secondary:hover {
+  background: var(--gray-light);
+}
+
+/* STYLES: Reset (Striped Warning) */
+.warning {
+  background: repeating-linear-gradient(
+    45deg,
+    #facc15,
+    #facc15 10px,
+    #eab308 10px,
+    #eab308 20px
+  );
+  color: var(--black);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+/* STYLES: Increase (Primary Orange) */
+.primary {
+  background: var(--orange);
+  color: var(--black);
+}
+.primary:hover {
+  background: #ff5e24; /* Lighter Orange */
+}
+
+/* Material Icons size fix */
+.material-symbols-outlined {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+/* --- 6. FOOTER --- */
+.device-footer {
+  margin-top: 1.5rem;
+  border-top: 2px solid #eee;
+  padding-top: 1rem;
+}
+
+.specs {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #888;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h1>🧠 JavaScript Quiz</h1>
+
+      <div class="progress">
+        <span>Question
+          <span id="current-q">1</span> of <span id="total-q">5</span>
+        </span>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <h2 id="question">What does DOM stand for?</h2>
+
+        <div class="options">
+          <button class="option" data-answer="a">Document Object Model</button>
+          <button class="option" data-answer="b">Data Object Model</button>
+          <button class="option" data-answer="c">Document Oriented Mode</button>
+          <button class="option" data-answer="d">Digital Output Machine</button>
+        </div>
+      </div>
+
+      <div class="feedback" id="feedback"></div>
+
+      <div class="nav-buttons">
+        <button id="next-btn" disabled>Next Question</button>
+      </div>
+
+      <div class="score-box" id="score-box">
+        <h2>Quiz Complete!</h2>
+        <p>
+          Your Score: <span id="final-score">0</span> /
+          <span id="max-score">5</span>
+        </p>
+        <button id="restart-btn">Restart Quiz</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Box Model Lab</title>
+    <style>
+      body {
+        font-family: monospace;
+        padding: 20px;
+      }
+
+      /* Common styles for both boxes */
+      .box {
+        width: 200px; /* We WANT it to be 200px wide */
+        height: 100px;
+        padding: 20px;
+        border: 5px solid black;
+        margin-bottom: 20px;
+        color: white;
+        font-weight: bold;
+      }
+
+      /* THE BAD WAY (Default) */
+      .bad {
+        box-sizing: content-box; /* Default */
+        background-color: red;
+        /*
+               Math:
+               200px (width) + 40px (padding L+R) + 10px (border L+R)
+               Total Width = 250px (Too big!)
+            */
+      }
+
+      /* THE GOOD WAY (Modern Standard) */
+      .good {
+        box-sizing: border-box; /* The Fix */
+        background-color: green;
+        /*
+               Math:
+               Total Width is forced to be 200px.
+               Content shrinks to fit padding/border.
+            */
+      }
+
+      /* Centering Block Elements */
+      .centered {
+        width: 50%;
+        margin: 0 auto; /* Top/Bot: 0, Left/Right: Auto */
+        background-color: blue;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>1. The "Box Sizing" Problem</h2>
+    <p>Both boxes below have <code>width: 200px</code> css.</p>
+
+    <div class="box bad">I am actually 250px wide.<br />(Bad)</div>
+    <div class="box good">I am exactly 200px wide.<br />(Good)</div>
+
+    <h2>2. Centering Blocks</h2>
+    <div class="centered">
+      I am a block centered using <code>margin: 0 auto</code>
+    </div>
+  </body>
+</html>

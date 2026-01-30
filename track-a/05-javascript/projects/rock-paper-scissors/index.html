@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="game-container">
+      <!-- Header -->
+      <header>
+        <h1 class="title">Rock Paper Scissors</h1>
+        <p class="subtitle">First to 5 points wins!</p>
+      </header>
+
+      <!-- Score Display -->
+      <div class="score-panel">
+        <div class="score-card player">
+          <div class="score-label">You</div>
+          <div class="score-value" id="player-score">0</div>
+        </div>
+
+        <div class="vs-divider">VS</div>
+
+        <div class="score-card computer">
+          <div class="score-label">Computer</div>
+          <div class="score-value" id="computer-score">0</div>
+        </div>
+      </div>
+
+      <!-- Result Message -->
+      <div class="result-container">
+        <p class="result-message" id="result-message">Choose your weapon!</p>
+      </div>
+
+      <!-- Weapon Choices -->
+      <div class="weapons">
+        <button class="weapon-btn" data-choice="rock">
+          <div class="weapon-icon">✊</div>
+          <div class="weapon-name">Rock</div>
+        </button>
+
+        <button class="weapon-btn" data-choice="paper">
+          <div class="weapon-icon">✋</div>
+          <div class="weapon-name">Paper</div>
+        </button>
+
+        <button class="weapon-btn" data-choice="scissors">
+          <div class="weapon-icon">✌️</div>
+          <div class="weapon-name">Scissors</div>
+        </button>
+      </div>
+
+      <!-- Game Over Overlay (Hidden by default) -->
+      <div class="game-over-overlay" id="game-over-overlay">
+        <div class="game-over-content">
+          <h2 id="winner-text">🎉 You Win!</h2>
+          <p id="final-score">Final Score: 5 - 3</p>
+          <button class="play-again-btn" id="reset-btn">Play Again</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

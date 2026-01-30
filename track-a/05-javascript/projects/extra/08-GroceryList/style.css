@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #134e5e, #71b280);
+}
+
+.grocery-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  max-width: 450px;
+  width: 90%;
+}
+
+h1 {
+  color: #2d3748;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+#grocery-input {
+  flex: 1;
+  padding: 15px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#grocery-input:focus {
+  border-color: #48bb78;
+}
+
+#add-btn {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  background: #48bb78;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#add-btn:hover {
+  background: #38a169;
+}
+
+.item-count {
+  color: #718096;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+#count {
+  color: #48bb78;
+  font-weight: bold;
+}
+
+.grocery-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.grocery-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: #f7fafc;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border-left: 4px solid #48bb78;
+}
+
+.grocery-item span {
+  flex: 1;
+  color: #2d3748;
+  font-size: 16px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.edit-btn {
+  background: #edf2f7;
+  color: #4a5568;
+}
+
+.edit-btn:hover {
+  background: #e2e8f0;
+}
+
+.delete-btn {
+  background: #fed7d7;
+  color: #c53030;
+}
+
+.delete-btn:hover {
+  background: #fc8181;
+  color: #fff;
+}
+
+.empty-message {
+  text-align: center;
+  color: #a0aec0;
+  padding: 30px;
+  font-style: italic;
+}
+
+.empty-message.hide {
+  display: none;
+}
+
+.clear-btn {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #fc8181;
+  border-radius: 10px;
+  background: transparent;
+  color: #c53030;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-btn:hover {
+  background: #fc8181;
+  color: #fff;
+}

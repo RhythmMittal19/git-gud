@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Access Control | AUTH.SYS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Syncopate:wght@700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="matrix-grid"></div>
+    <div class="scanline-overlay"></div>
+    <div class="noise-overlay"></div>
+    <div class="vignette"></div>
+
+    <main class="auth-container">
+      <div class="auth-card">
+        <!-- Security Header -->
+        <header class="auth-header">
+          <div class="security-badge">
+            <div class="badge-icon">
+              <span class="icon-outer"></span>
+              <span class="icon-inner"></span>
+              <span class="icon-core"></span>
+            </div>
+            <div class="badge-pulse"></div>
+          </div>
+
+          <div class="header-content">
+            <div class="system-status">
+              <span class="status-dot"></span>
+              <span class="status-text">SECURE CONNECTION</span>
+            </div>
+            <h1 class="auth-title">ACCESS CONTROL</h1>
+            <p class="auth-subtitle">IDENTITY VERIFICATION REQUIRED</p>
+          </div>
+
+          <div class="header-meta">
+            <span class="meta-item">
+              <span class="meta-label">PROTOCOL</span>
+              <span class="meta-value">TLS 1.3</span>
+            </span>
+            <span class="meta-item">
+              <span class="meta-label">ENCRYPTION</span>
+              <span class="meta-value">AES-256</span>
+            </span>
+          </div>
+        </header>
+
+        <!-- Auth Form -->
+        <form id="auth-form" class="auth-form" novalidate>
+          <!-- Username Field -->
+          <div class="form-field" id="username-field">
+            <div class="field-header">
+              <label for="username" class="field-label">
+                <span class="label-icon">◈</span>
+                <span class="label-text">USERNAME</span>
+              </label>
+              <span class="field-status">
+                <span class="status-icon status-icon--success">✓</span>
+                <span class="status-icon status-icon--error">!</span>
+              </span>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-prefix">USR://</span>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                class="form-input"
+                placeholder="Enter username"
+                autocomplete="username"
+                required
+                minlength="3"
+              />
+              <div class="input-border"></div>
+              <div class="input-glow"></div>
+            </div>
+            <div class="field-message">
+              <span class="message-icon">▸</span>
+              <span class="message-text" id="username-message"
+                >Minimum 3 characters required</span
+              >
+            </div>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-field" id="email-field">
+            <div class="field-header">
+              <label for="email" class="field-label">
+                <span class="label-icon">◇</span>
+                <span class="label-text">EMAIL ADDRESS</span>
+              </label>
+              <span class="field-status">
+                <span class="status-icon status-icon--success">✓</span>
+                <span class="status-icon status-icon--error">!</span>
+              </span>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-prefix">@://</span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="Enter email address"
+                autocomplete="email"
+                required
+              />
+              <div class="input-border"></div>
+              <div class="input-glow"></div>
+            </div>
+            <div class="field-message">
+              <span class="message-icon">▸</span>
+              <span class="message-text" id="email-message"
+                >Valid email format required</span
+              >
+            </div>
+          </div>
+
+          <!-- Password Field -->
+          <div class="form-field" id="password-field">
+            <div class="field-header">
+              <label for="password" class="field-label">
+                <span class="label-icon">△</span>
+                <span class="label-text">PASSWORD</span>
+              </label>
+              <span class="field-status">
+                <span class="status-icon status-icon--success">✓</span>
+                <span class="status-icon status-icon--error">!</span>
+              </span>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-prefix">KEY://</span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-input"
+                placeholder="Enter password"
+                autocomplete="new-password"
+                required
+                minlength="8"
+              />
+              <button
+                type="button"
+                class="toggle-password"
+                id="toggle-password"
+                aria-label="Toggle password visibility"
+              >
+                <span class="eye-icon">◉</span>
+              </button>
+              <div class="input-border"></div>
+              <div class="input-glow"></div>
+            </div>
+            <div class="field-message">
+              <span class="message-icon">▸</span>
+              <span class="message-text" id="password-message"
+                >Minimum 8 characters required</span
+              >
+            </div>
+
+            <!-- Password Strength Indicator -->
+            <div class="password-strength">
+              <div class="strength-bars">
+                <span class="strength-bar" data-level="1"></span>
+                <span class="strength-bar" data-level="2"></span>
+                <span class="strength-bar" data-level="3"></span>
+                <span class="strength-bar" data-level="4"></span>
+              </div>
+              <span class="strength-label" id="strength-label"
+                >STRENGTH: --</span
+              >
+            </div>
+          </div>
+
+          <!-- Confirm Password Field -->
+          <div class="form-field" id="confirm-password-field">
+            <div class="field-header">
+              <label for="confirm-password" class="field-label">
+                <span class="label-icon">▽</span>
+                <span class="label-text">CONFIRM PASSWORD</span>
+              </label>
+              <span class="field-status">
+                <span class="status-icon status-icon--success">✓</span>
+                <span class="status-icon status-icon--error">!</span>
+              </span>
+            </div>
+            <div class="input-wrapper">
+              <span class="input-prefix">VRF://</span>
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                class="form-input"
+                placeholder="Confirm password"
+                autocomplete="new-password"
+                required
+              />
+              <button
+                type="button"
+                class="toggle-password"
+                id="toggle-confirm-password"
+                aria-label="Toggle password visibility"
+              >
+                <span class="eye-icon">◉</span>
+              </button>
+              <div class="input-border"></div>
+              <div class="input-glow"></div>
+            </div>
+            <div class="field-message">
+              <span class="message-icon">▸</span>
+              <span class="message-text" id="confirm-password-message"
+                >Passwords must match</span
+              >
+            </div>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="form-checkbox">
+            <label class="checkbox-wrapper">
+              <input type="checkbox" id="terms" name="terms" required />
+              <span class="checkbox-custom">
+                <span class="checkbox-check"></span>
+              </span>
+              <span class="checkbox-label">
+                I accept the
+                <a href="#" class="checkbox-link">Security Protocols</a> and
+                <a href="#" class="checkbox-link">Data Terms</a>
+              </span>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" id="submit-btn" class="submit-btn">
+            <span class="btn-background"></span>
+            <span class="btn-content">
+              <span class="btn-icon">
+                <span class="icon-arrow">→</span>
+              </span>
+              <span class="btn-text">INITIALIZE ACCESS</span>
+            </span>
+            <span class="btn-loading">
+              <span class="loading-spinner"></span>
+              <span class="loading-text">VERIFYING...</span>
+            </span>
+            <span class="btn-glow"></span>
+          </button>
+        </form>
+
+        <!-- Auth Footer -->
+        <footer class="auth-footer">
+          <div class="footer-divider">
+            <span class="divider-line"></span>
+            <span class="divider-text">OR</span>
+            <span class="divider-line"></span>
+          </div>
+
+          <p class="footer-text">
+            Already have access?
+            <a href="#" class="footer-link" id="login-link"
+              >AUTHENTICATE HERE</a
+            >
+          </p>
+
+          <div class="security-info">
+            <span class="info-icon">🔒</span>
+            <span class="info-text"
+              >256-BIT ENCRYPTED • ZERO KNOWLEDGE PROOF</span
+            >
+          </div>
+        </footer>
+      </div>
+
+      <!-- Side Info Panel -->
+      <aside class="info-panel">
+        <div class="info-block">
+          <span class="info-number">01</span>
+          <h3 class="info-title">SECURE</h3>
+          <p class="info-desc">
+            Military-grade encryption protects your credentials
+          </p>
+        </div>
+        <div class="info-block">
+          <span class="info-number">02</span>
+          <h3 class="info-title">PRIVATE</h3>
+          <p class="info-desc">
+            Zero-knowledge architecture ensures data privacy
+          </p>
+        </div>
+        <div class="info-block">
+          <span class="info-number">03</span>
+          <h3 class="info-title">VERIFIED</h3>
+          <p class="info-desc">Multi-factor authentication available</p>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Success Overlay -->
+    <div id="success-overlay" class="success-overlay">
+      <div class="success-content">
+        <div class="success-icon">
+          <span class="success-check"></span>
+          <span class="success-ring"></span>
+        </div>
+        <h2 class="success-title">ACCESS GRANTED</h2>
+        <p class="success-text">Identity verification complete</p>
+        <div class="success-redirect">
+          <span class="redirect-text">Redirecting in</span>
+          <span class="redirect-countdown" id="redirect-countdown">3</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Window</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Trigger Button -->
+    <div class="container">
+      <h1>Modal Window</h1>
+      <p>Click the button below to see the magic!</p>
+      <button id="openBtn" class="btn-open">Open Modal</button>
+    </div>
+
+    <!-- Overlay (dark background) -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Modal Box -->
+    <div id="modal" class="modal">
+      <button id="closeBtn" class="btn-close">&times;</button>
+      <h2>🎉 Welcome!</h2>
+      <p>
+        This is a beautiful modal window. You can put any content here - forms,
+        images, videos, or just text!
+      </p>
+      <button id="gotItBtn" class="btn-confirm">Got it!</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

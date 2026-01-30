@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.input-section {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.input-section input {
+  width: 100px;
+  padding: 12px;
+  font-size: 1.2rem;
+  text-align: center;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background: #111;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-section input:focus {
+  border-color: #667eea;
+}
+
+.display {
+  font-size: 6rem;
+  font-weight: 200;
+  font-family: "Courier New", monospace;
+  letter-spacing: 5px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.display.warning {
+  background: linear-gradient(135deg, #f39c12, #e74c3c);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.display.done {
+  animation: pulse 0.5s ease infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.status {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  min-height: 24px;
+}
+
+.status.running {
+  color: #2ecc71;
+}
+
+.status.paused {
+  color: #f39c12;
+}
+
+.status.finished {
+  color: #e74c3c;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 15px 35px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-weight: 600;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-start {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #fff;
+}
+
+.btn-pause {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+  color: #fff;
+}
+
+.btn-reset {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+}
+
+.btn:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}

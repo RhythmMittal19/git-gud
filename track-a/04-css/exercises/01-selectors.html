@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Selector Practice</title>
+    <style>
+      /* 1. Universal Selector: Sets font for everything */
+      * {
+        font-family: sans-serif;
+      }
+
+      /* 2. Element Selector: All divs get gray background */
+      div {
+        padding: 10px;
+        margin: 10px;
+        background-color: #eee;
+      }
+
+      /* 3. Class Selector: .alert makes text red */
+      .alert {
+        color: red;
+        border: 1px solid red;
+      }
+
+      /* 4. ID Selector: #unique overrides .alert color! */
+      #unique {
+        color: purple; /* This wins because ID > Class */
+        font-weight: bold;
+      }
+
+      /* 5. Descendant Selector: formatting ONLY spans inside .container */
+      .container span {
+        background-color: yellow;
+      }
+
+      /* 6. Chained Selector: ONLY elements with BOTH classes */
+      .box.active {
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Specificity Wars</h2>
+    <div class="alert">I am a normal alert (Red).</div>
+    <div class="alert" id="unique">I have an ID! (Purple wins).</div>
+
+    <h2>Descendants</h2>
+    <div class="container">
+      <span>I am inside container (Highlighted).</span>
+    </div>
+    <div>
+      <span>I am outside container (Not highlighted).</span>
+    </div>
+
+    <h2>Chaining</h2>
+    <div class="box">Normal Box</div>
+    <div class="box active">Active Box (Green)</div>
+  </body>
+</html>

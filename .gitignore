@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Environment Variables (SECRETS)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.obsidian
+**/config.js
+
+# Build Outputs
+dist/
+build/
+out/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Debug Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# C/C++ Compiled Files
+*.o
+*.obj
+*.exe
+*.out
+*.app
+
+# Temporary Files
+tmp/
+temp/
+MY-ROADMAP.md

@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07 // DAILY OBJECTIVES</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <!-- Theme Toggle Button -->
+      <button
+        class="theme-toggle"
+        id="theme-toggle"
+        aria-label="Toggle dark/light mode"
+      >
+        <span class="material-symbols-outlined icon-sun">light_mode</span>
+        <span class="material-symbols-outlined icon-moon">dark_mode</span>
+      </button>
+      <!-- ========================================
+             HEADER SECTION
+             ======================================== -->
+      <header class="dashboard-header">
+        <!-- Circular Progress Indicator -->
+        <div class="progress-circle-wrapper">
+          <div class="glow-effect"></div>
+          <svg class="progress-ring" viewBox="0 0 100 100">
+            <circle class="ring-bg" cx="50" cy="50" r="40"></circle>
+            <circle
+              id="progress-ring-fill"
+              class="ring-fill"
+              cx="50"
+              cy="50"
+              r="40"
+              stroke-dasharray="251.2"
+              stroke-dashoffset="251.2"
+            ></circle>
+          </svg>
+          <div class="progress-text">
+            <span class="number" id="progress-percentage">0%</span>
+            <span class="label">DONE</span>
+          </div>
+        </div>
+
+        <!-- Header Text -->
+        <div class="header-text">
+          <div class="date-badge" id="current-date">LOADING DATE...</div>
+          <h1>DAILY OBJECTIVES</h1>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="quick-stats">
+          <div class="stat-item">
+            <span class="stat-number" id="total-tasks">0</span>
+            <span class="stat-label">TOTAL</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" id="active-tasks">0</span>
+            <span class="stat-label">ACTIVE</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" id="completed-tasks">0</span>
+            <span class="stat-label">DONE</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- ========================================
+             MAIN TASK BOARD
+             ======================================== -->
+      <main class="task-board">
+        <!-- Search & Filter Bar -->
+        <div class="control-bar">
+          <!-- Search Input -->
+          <div class="search-wrapper">
+            <span class="material-symbols-outlined search-icon">search</span>
+            <input
+              type="text"
+              id="search-input"
+              class="search-input"
+              placeholder="Search tasks..."
+              aria-label="Search tasks"
+            />
+            <button
+              id="clear-search-btn"
+              class="clear-search-btn hidden"
+              aria-label="Clear search"
+            >
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+
+          <!-- Sort Dropdown -->
+          <div class="sort-wrapper">
+            <label for="sort-select" class="visually-hidden">Sort by</label>
+            <select id="sort-select" class="sort-select">
+              <option value="created">NEWEST FIRST</option>
+              <option value="created-asc">OLDEST FIRST</option>
+              <option value="alphabetical">A → Z</option>
+              <option value="urgent">URGENT FIRST</option>
+            </select>
+            <span class="material-symbols-outlined sort-icon">sort</span>
+          </div>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-bar">
+          <span class="status-indicator" id="status-indicator"
+            >0 / 0 TASKS COMPLETED</span
+          >
+          <div class="tabs" id="filter-tabs" role="tablist">
+            <button
+              class="tab active"
+              data-filter="all"
+              role="tab"
+              aria-selected="true"
+            >
+              ALL
+              <span class="tab-count" id="tab-count-all">0</span>
+            </button>
+            <button
+              class="tab"
+              data-filter="active"
+              role="tab"
+              aria-selected="false"
+            >
+              ACTIVE
+              <span class="tab-count" id="tab-count-active">0</span>
+            </button>
+            <button
+              class="tab"
+              data-filter="completed"
+              role="tab"
+              aria-selected="false"
+            >
+              COMPLETED
+              <span class="tab-count" id="tab-count-completed">0</span>
+            </button>
+            <button
+              class="tab"
+              data-filter="urgent"
+              role="tab"
+              aria-selected="false"
+            >
+              <span class="material-symbols-outlined">priority_high</span>
+              URGENT
+              <span class="tab-count" id="tab-count-urgent">0</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ========================================
+                 TASK LIST
+                 ======================================== -->
+        <div class="card-stack" id="task-list">
+          <!-- Example Task Card: Standard -->
+          <article
+            class="task-card"
+            data-id="task-1"
+            data-completed="false"
+            data-urgent="false"
+            data-project="design"
+          >
+            <div class="card-content">
+              <!-- Drag Handle -->
+              <button class="drag-handle" aria-label="Drag to reorder">
+                <span class="material-symbols-outlined">drag_indicator</span>
+              </button>
+
+              <!-- Checkbox -->
+              <label class="custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="task-checkbox"
+                  aria-label="Mark as complete"
+                />
+                <div class="checkmark">
+                  <span class="material-symbols-outlined icon">check</span>
+                </div>
+              </label>
+
+              <!-- Text Content -->
+              <div class="text-group">
+                <h3 class="task-title">Review Architecture Diagrams</h3>
+                <div class="meta">
+                  <div class="meta-item meta-time">
+                    <span class="material-symbols-outlined">schedule</span>
+                    <span class="task-time">10:00 AM</span>
+                  </div>
+                  <span class="meta-dot"></span>
+                  <div class="meta-item meta-project">
+                    <span class="material-symbols-outlined">folder</span>
+                    <span class="task-project">DESIGN TEAM</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="actions">
+                <button
+                  class="action-btn priority-btn"
+                  aria-label="Toggle priority"
+                  data-tooltip="Mark Urgent"
+                >
+                  <span class="material-symbols-outlined">flag</span>
+                </button>
+                <button
+                  class="action-btn edit-btn"
+                  aria-label="Edit task"
+                  data-tooltip="Edit"
+                >
+                  <span class="material-symbols-outlined">edit</span>
+                </button>
+                <button
+                  class="action-btn delete-btn"
+                  aria-label="Delete task"
+                  data-tooltip="Delete"
+                >
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Example Task Card: Urgent -->
+          <article
+            class="task-card is-urgent"
+            data-id="task-2"
+            data-completed="false"
+            data-urgent="true"
+            data-project="project-alpha"
+          >
+            <div class="card-content">
+              <button class="drag-handle" aria-label="Drag to reorder">
+                <span class="material-symbols-outlined">drag_indicator</span>
+              </button>
+
+              <label class="custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="task-checkbox"
+                  aria-label="Mark as complete"
+                />
+                <div class="checkmark">
+                  <span class="material-symbols-outlined icon">check</span>
+                </div>
+              </label>
+
+              <div class="text-group">
+                <div class="title-row">
+                  <h3 class="task-title">Client Meeting at 2 PM</h3>
+                  <span class="badge-urgent">
+                    <span class="material-symbols-outlined">priority_high</span>
+                    URGENT
+                  </span>
+                </div>
+                <div class="meta">
+                  <div class="meta-item meta-time">
+                    <span class="material-symbols-outlined">schedule</span>
+                    <span class="task-time">2:00 PM</span>
+                  </div>
+                  <span class="meta-dot"></span>
+                  <div class="meta-item meta-project">
+                    <span class="material-symbols-outlined">work</span>
+                    <span class="task-project">PROJECT ALPHA</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="actions">
+                <button
+                  class="action-btn priority-btn active"
+                  aria-label="Toggle priority"
+                  data-tooltip="Remove Urgent"
+                >
+                  <span class="material-symbols-outlined">flag</span>
+                </button>
+                <button
+                  class="action-btn edit-btn"
+                  aria-label="Edit task"
+                  data-tooltip="Edit"
+                >
+                  <span class="material-symbols-outlined">edit</span>
+                </button>
+                <button
+                  class="action-btn delete-btn"
+                  aria-label="Delete task"
+                  data-tooltip="Delete"
+                >
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Example Task Card: Completed -->
+          <article
+            class="task-card completed"
+            data-id="task-3"
+            data-completed="true"
+            data-urgent="false"
+            data-project="design"
+          >
+            <div class="card-content">
+              <button class="drag-handle" aria-label="Drag to reorder">
+                <span class="material-symbols-outlined">drag_indicator</span>
+              </button>
+
+              <label class="custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="task-checkbox"
+                  checked
+                  aria-label="Mark as incomplete"
+                />
+                <div class="checkmark">
+                  <span class="material-symbols-outlined icon">check</span>
+                </div>
+              </label>
+
+              <div class="text-group">
+                <h3 class="task-title">Update Design System</h3>
+                <div class="meta">
+                  <div class="meta-item completed-tag">
+                    <span class="status-dot"></span>
+                    <span>COMPLETED</span>
+                  </div>
+                  <span class="meta-dot"></span>
+                  <span class="completed-time">Completed 2h ago</span>
+                </div>
+              </div>
+
+              <div class="actions">
+                <button
+                  class="action-btn undo-btn"
+                  aria-label="Undo completion"
+                  data-tooltip="Undo"
+                >
+                  <span class="material-symbols-outlined">undo</span>
+                </button>
+                <button
+                  class="action-btn delete-btn"
+                  aria-label="Delete task"
+                  data-tooltip="Delete"
+                >
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Example Task Card: Standard with Due Date -->
+          <article
+            class="task-card"
+            data-id="task-4"
+            data-completed="false"
+            data-urgent="false"
+            data-project="research"
+          >
+            <div class="card-content">
+              <button class="drag-handle" aria-label="Drag to reorder">
+                <span class="material-symbols-outlined">drag_indicator</span>
+              </button>
+
+              <label class="custom-checkbox">
+                <input
+                  type="checkbox"
+                  class="task-checkbox"
+                  aria-label="Mark as complete"
+                />
+                <div class="checkmark">
+                  <span class="material-symbols-outlined icon">check</span>
+                </div>
+              </label>
+
+              <div class="text-group">
+                <h3 class="task-title">Research Pop Trends</h3>
+                <div class="meta">
+                  <div class="meta-item meta-project">
+                    <span class="material-symbols-outlined">lightbulb</span>
+                    <span class="task-project">UX RESEARCH</span>
+                  </div>
+                  <span class="meta-dot"></span>
+                  <div class="meta-item meta-due">
+                    <span class="material-symbols-outlined">event</span>
+                    <span class="task-due">Due Tomorrow</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="actions">
+                <button
+                  class="action-btn priority-btn"
+                  aria-label="Toggle priority"
+                  data-tooltip="Mark Urgent"
+                >
+                  <span class="material-symbols-outlined">flag</span>
+                </button>
+                <button
+                  class="action-btn edit-btn"
+                  aria-label="Edit task"
+                  data-tooltip="Edit"
+                >
+                  <span class="material-symbols-outlined">edit</span>
+                </button>
+                <button
+                  class="action-btn delete-btn"
+                  aria-label="Delete task"
+                  data-tooltip="Delete"
+                >
+                  <span class="material-symbols-outlined">delete</span>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- ========================================
+                 EMPTY STATE
+                 ======================================== -->
+        <div id="empty-state" class="empty-state hidden">
+          <div class="empty-illustration">
+            <span class="material-symbols-outlined">task_alt</span>
+          </div>
+          <h2 class="empty-title">NO TASKS YET</h2>
+          <p class="empty-text">
+            Hit the button below to add your first objective
+          </p>
+          <button class="empty-add-btn" id="empty-add-btn">
+            <span class="material-symbols-outlined">add</span>
+            ADD FIRST TASK
+          </button>
+        </div>
+
+        <!-- ========================================
+                 NO RESULTS STATE (for search/filter)
+                 ======================================== -->
+        <div id="no-results-state" class="no-results-state hidden">
+          <div class="no-results-icon">
+            <span class="material-symbols-outlined">search_off</span>
+          </div>
+          <h2 class="no-results-title">NO MATCHING TASKS</h2>
+          <p class="no-results-text">Try adjusting your search or filter</p>
+          <button class="clear-filters-btn" id="clear-filters-btn">
+            <span class="material-symbols-outlined">filter_alt_off</span>
+            CLEAR FILTERS
+          </button>
+        </div>
+
+        <!-- ========================================
+                 BULK ACTIONS BAR
+                 ======================================== -->
+        <div id="bulk-actions-bar" class="bulk-actions-bar hidden">
+          <div class="bulk-info">
+            <span class="material-symbols-outlined">check_circle</span>
+            <span id="selected-count">0</span> tasks selected
+          </div>
+          <div class="bulk-buttons">
+            <button id="bulk-complete-btn" class="bulk-btn">
+              <span class="material-symbols-outlined">done_all</span>
+              Complete All
+            </button>
+            <button id="bulk-delete-btn" class="bulk-btn bulk-btn--danger">
+              <span class="material-symbols-outlined">delete_sweep</span>
+              Delete All
+            </button>
+            <button id="bulk-cancel-btn" class="bulk-btn bulk-btn--secondary">
+              <span class="material-symbols-outlined">close</span>
+              Cancel
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <!-- ========================================
+             FOOTER ACTIONS
+             ======================================== -->
+      <footer class="footer-actions">
+        <button id="clear-completed-btn" class="clear-completed-btn" disabled>
+          <span class="material-symbols-outlined">delete_sweep</span>
+          CLEAR COMPLETED
+          <span class="clear-count" id="clear-count">(0)</span>
+        </button>
+      </footer>
+
+      <!-- ========================================
+             FLOATING ACTION BUTTON (FAB)
+             ======================================== -->
+      <div class="fab-wrapper">
+        <div class="fab-glow"></div>
+        <button id="add-task-btn" class="fab-btn" aria-label="Add new task">
+          <div class="icon-circle">
+            <span class="material-symbols-outlined">add</span>
+          </div>
+          <span class="fab-text">NEW TASK</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================
+         ADD TASK MODAL
+         ======================================== -->
+    <div
+      id="add-task-modal"
+      class="modal"
+      role="dialog"
+      aria-labelledby="add-modal-title"
+      aria-modal="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <header class="modal-header">
+          <h2 id="add-modal-title" class="modal-title">
+            <span class="material-symbols-outlined">add_task</span>
+            NEW TASK
+          </h2>
+          <button
+            id="add-modal-close"
+            class="modal-close"
+            aria-label="Close modal"
+          >
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </header>
+
+        <form id="add-task-form" class="modal-body">
+          <!-- Task Title -->
+          <div class="form-group">
+            <label for="task-title-input" class="form-label">
+              TASK TITLE <span class="required">*</span>
+            </label>
+            <input
+              type="text"
+              id="task-title-input"
+              class="form-input"
+              placeholder="What needs to be done?"
+              required
+              maxlength="100"
+              autocomplete="off"
+            />
+            <span class="char-counter"
+              ><span id="title-char-count">0</span>/100</span
+            >
+          </div>
+
+          <!-- Task Description (Optional) -->
+          <div class="form-group">
+            <label for="task-description-input" class="form-label">
+              DESCRIPTION
+              <span class="optional">(Optional)</span>
+            </label>
+            <textarea
+              id="task-description-input"
+              class="form-textarea"
+              placeholder="Add more details..."
+              rows="3"
+              maxlength="500"
+            ></textarea>
+          </div>
+
+          <!-- Time & Date Row -->
+          <div class="form-row">
+            <div class="form-group form-group--half">
+              <label for="task-time-input" class="form-label">
+                <span class="material-symbols-outlined">schedule</span>
+                TIME
+              </label>
+              <input
+                type="time"
+                id="task-time-input"
+                class="form-input form-input--time"
+              />
+            </div>
+            <div class="form-group form-group--half">
+              <label for="task-date-input" class="form-label">
+                <span class="material-symbols-outlined">event</span>
+                DUE DATE
+              </label>
+              <input
+                type="date"
+                id="task-date-input"
+                class="form-input form-input--date"
+              />
+            </div>
+          </div>
+
+          <!-- Project/Category -->
+          <div class="form-group">
+            <label for="task-project-input" class="form-label">
+              <span class="material-symbols-outlined">folder</span>
+              PROJECT / CATEGORY
+            </label>
+            <div class="project-input-wrapper">
+              <input
+                type="text"
+                id="task-project-input"
+                class="form-input"
+                placeholder="e.g., Work, Personal, Design Team"
+                list="project-suggestions"
+              />
+              <datalist id="project-suggestions">
+                <option value="DESIGN TEAM"></option>
+                <option value="PROJECT ALPHA"></option>
+                <option value="UX RESEARCH"></option>
+                <option value="PERSONAL"></option>
+                <option value="WORK"></option>
+              </datalist>
+            </div>
+          </div>
+
+          <!-- Priority Toggle -->
+          <div class="form-group form-group--toggle">
+            <div class="toggle-wrapper">
+              <label class="toggle-label" for="task-urgent-toggle">
+                <span class="material-symbols-outlined">priority_high</span>
+                MARK AS URGENT
+              </label>
+              <label class="toggle-switch">
+                <input type="checkbox" id="task-urgent-toggle" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <p class="toggle-hint">
+              Urgent tasks appear at the top of your list
+            </p>
+          </div>
+
+          <!-- Quick Tags -->
+          <div class="form-group">
+            <label class="form-label">QUICK TAGS</label>
+            <div class="quick-tags" id="quick-tags">
+              <button
+                type="button"
+                class="quick-tag"
+                data-project="DESIGN TEAM"
+              >
+                <span class="material-symbols-outlined">palette</span>
+                Design
+              </button>
+              <button
+                type="button"
+                class="quick-tag"
+                data-project="DEVELOPMENT"
+              >
+                <span class="material-symbols-outlined">code</span>
+                Dev
+              </button>
+              <button type="button" class="quick-tag" data-project="MEETING">
+                <span class="material-symbols-outlined">groups</span>
+                Meeting
+              </button>
+              <button type="button" class="quick-tag" data-project="PERSONAL">
+                <span class="material-symbols-outlined">person</span>
+                Personal
+              </button>
+              <button type="button" class="quick-tag" data-project="RESEARCH">
+                <span class="material-symbols-outlined">science</span>
+                Research
+              </button>
+            </div>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="form-actions">
+            <button type="button" id="cancel-add-btn" class="btn-secondary">
+              CANCEL
+            </button>
+            <button type="submit" id="save-task-btn" class="btn-primary">
+              <span class="material-symbols-outlined">add_task</span>
+              ADD TASK
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ========================================
+         EDIT TASK MODAL
+         ======================================== -->
+    <div
+      id="edit-task-modal"
+      class="modal"
+      role="dialog"
+      aria-labelledby="edit-modal-title"
+      aria-modal="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <header class="modal-header">
+          <h2 id="edit-modal-title" class="modal-title">
+            <span class="material-symbols-outlined">edit_note</span>
+            EDIT TASK
+          </h2>
+          <button
+            id="edit-modal-close"
+            class="modal-close"
+            aria-label="Close modal"
+          >
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </header>
+
+        <form id="edit-task-form" class="modal-body">
+          <!-- Hidden ID Field -->
+          <input type="hidden" id="edit-task-id" />
+
+          <!-- Task Title -->
+          <div class="form-group">
+            <label for="edit-title-input" class="form-label">
+              TASK TITLE <span class="required">*</span>
+            </label>
+            <input
+              type="text"
+              id="edit-title-input"
+              class="form-input"
+              placeholder="What needs to be done?"
+              required
+              maxlength="100"
+            />
+          </div>
+
+          <!-- Task Description -->
+          <div class="form-group">
+            <label for="edit-description-input" class="form-label">
+              DESCRIPTION
+            </label>
+            <textarea
+              id="edit-description-input"
+              class="form-textarea"
+              placeholder="Add more details..."
+              rows="3"
+            ></textarea>
+          </div>
+
+          <!-- Time & Date Row -->
+          <div class="form-row">
+            <div class="form-group form-group--half">
+              <label for="edit-time-input" class="form-label">
+                <span class="material-symbols-outlined">schedule</span>
+                TIME
+              </label>
+              <input
+                type="time"
+                id="edit-time-input"
+                class="form-input form-input--time"
+              />
+            </div>
+            <div class="form-group form-group--half">
+              <label for="edit-date-input" class="form-label">
+                <span class="material-symbols-outlined">event</span>
+                DUE DATE
+              </label>
+              <input
+                type="date"
+                id="edit-date-input"
+                class="form-input form-input--date"
+              />
+            </div>
+          </div>
+
+          <!-- Project/Category -->
+          <div class="form-group">
+            <label for="edit-project-input" class="form-label">
+              <span class="material-symbols-outlined">folder</span>
+              PROJECT / CATEGORY
+            </label>
+            <input
+              type="text"
+              id="edit-project-input"
+              class="form-input"
+              placeholder="e.g., Work, Personal"
+              list="project-suggestions"
+            />
+          </div>
+
+          <!-- Priority Toggle -->
+          <div class="form-group form-group--toggle">
+            <div class="toggle-wrapper">
+              <label class="toggle-label" for="edit-urgent-toggle">
+                <span class="material-symbols-outlined">priority_high</span>
+                MARK AS URGENT
+              </label>
+              <label class="toggle-switch">
+                <input type="checkbox" id="edit-urgent-toggle" />
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="form-actions">
+            <button type="button" id="delete-from-edit-btn" class="btn-danger">
+              <span class="material-symbols-outlined">delete</span>
+              DELETE
+            </button>
+            <div class="form-actions-right">
+              <button type="button" id="cancel-edit-btn" class="btn-secondary">
+                CANCEL
+              </button>
+              <button type="submit" id="update-task-btn" class="btn-primary">
+                <span class="material-symbols-outlined">save</span>
+                SAVE CHANGES
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- ========================================
+         DELETE CONFIRMATION MODAL
+         ======================================== -->
+    <div
+      id="delete-confirm-modal"
+      class="modal modal--small"
+      role="alertdialog"
+      aria-labelledby="delete-modal-title"
+      aria-modal="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content modal-content--danger">
+        <div class="modal-icon">
+          <span class="material-symbols-outlined">warning</span>
+        </div>
+        <h2 id="delete-modal-title" class="modal-title">DELETE TASK?</h2>
+        <p class="modal-text">
+          This action cannot be undone. The task will be permanently removed.
+        </p>
+        <input type="hidden" id="delete-task-id" />
+        <div class="modal-buttons">
+          <button id="cancel-delete-btn" class="btn-secondary">CANCEL</button>
+          <button id="confirm-delete-btn" class="btn-danger">
+            <span class="material-symbols-outlined">delete_forever</span>
+            DELETE
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         CLEAR COMPLETED CONFIRMATION MODAL
+         ======================================== -->
+    <div
+      id="clear-confirm-modal"
+      class="modal modal--small"
+      role="alertdialog"
+      aria-labelledby="clear-modal-title"
+      aria-modal="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content modal-content--warning">
+        <div class="modal-icon">
+          <span class="material-symbols-outlined">delete_sweep</span>
+        </div>
+        <h2 id="clear-modal-title" class="modal-title">CLEAR ALL COMPLETED?</h2>
+        <p class="modal-text">
+          This will permanently remove
+          <strong id="clear-confirm-count">0</strong> completed tasks.
+        </p>
+        <div class="modal-buttons">
+          <button id="cancel-clear-btn" class="btn-secondary">CANCEL</button>
+          <button id="confirm-clear-btn" class="btn-danger">
+            <span class="material-symbols-outlined">delete_sweep</span>
+            CLEAR ALL
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========================================
+         TOAST NOTIFICATIONS CONTAINER
+         ======================================== -->
+    <div
+      id="toast-container"
+      class="toast-container"
+      aria-live="polite"
+      aria-atomic="true"
+    >
+      <!-- Toasts will be dynamically inserted here -->
+
+      <!-- Example Toast (for CSS reference, remove in production) -->
+      <!--
+        <div class="toast toast--success">
+            <span class="material-symbols-outlined toast-icon">check_circle</span>
+            <span class="toast-message">Task added successfully!</span>
+            <button class="toast-close">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        -->
+    </div>
+
+    <!-- ========================================
+         KEYBOARD SHORTCUTS MODAL
+         ======================================== -->
+    <div
+      id="shortcuts-modal"
+      class="modal modal--shortcuts active"
+      role="dialog"
+      aria-labelledby="shortcuts-title"
+      aria-modal="true"
+    >
+      <div class="modal-backdrop"></div>
+      <div class="modal-content">
+        <header class="modal-header">
+          <h2 id="shortcuts-title" class="modal-title">
+            <span class="material-symbols-outlined">keyboard</span>
+            KEYBOARD SHORTCUTS
+          </h2>
+          <button id="shortcuts-close" class="modal-close" aria-label="Close">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </header>
+        <div class="shortcuts-grid">
+          <div class="shortcut-item">
+            <kbd>N</kbd>
+            <span>New Task</span>
+          </div>
+          <div class="shortcut-item">
+            <kbd>/</kbd>
+            <span>Search</span>
+          </div>
+          <div class="shortcut-item">
+            <kbd>Esc</kbd>
+            <span>Close Modal</span>
+          </div>
+          <div class="shortcut-item">
+            <kbd>1</kbd>
+            <span>Show All</span>
+          </div>
+          <div class="shortcut-item">
+            <kbd>2</kbd>
+            <span>Show Active</span>
+          </div>
+          <div class="shortcut-item">
+            <kbd>3</kbd>
+            <span>Show Completed</span>
+          </div>
+          <div class="shortcut-item">
+            <kbd>?</kbd>
+            <span>This Menu</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/dom.js"></script>
+    <script src="js/state.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

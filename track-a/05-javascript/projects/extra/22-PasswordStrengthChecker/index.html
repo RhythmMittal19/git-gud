@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Password Strength Checker - Create secure passwords"
+    />
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <!-- Card Container -->
+      <div class="card">
+        <!-- Header -->
+        <header class="card-header">
+          <div class="icon-wrapper">
+            <svg
+              class="lock-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <h1>Create Password</h1>
+          <p class="subtitle">Enter a strong password to secure your account</p>
+        </header>
+
+        <!-- Password Input Section -->
+        <div class="password-section">
+          <div class="input-wrapper">
+            <input
+              type="password"
+              id="password-input"
+              class="password-input"
+              placeholder="Enter your password"
+              autocomplete="new-password"
+              aria-describedby="strength-text"
+            />
+            <button
+              type="button"
+              class="toggle-visibility"
+              id="toggle-btn"
+              aria-label="Toggle password visibility"
+            >
+              <!-- Eye Open Icon -->
+              <svg
+                class="eye-icon eye-open"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              <!-- Eye Closed Icon -->
+              <svg
+                class="eye-icon eye-closed"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"
+                />
+                <line x1="1" y1="1" x2="23" y2="23" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Strength Meter -->
+          <div class="strength-meter">
+            <div class="strength-bars">
+              <div class="bar" data-index="1"></div>
+              <div class="bar" data-index="2"></div>
+              <div class="bar" data-index="3"></div>
+              <div class="bar" data-index="4"></div>
+            </div>
+            <span class="strength-text" id="strength-text"
+              >Enter a password</span
+            >
+          </div>
+        </div>
+
+        <!-- Requirements Checklist -->
+        <div class="requirements">
+          <h2 class="requirements-title">Password Requirements</h2>
+          <ul class="requirements-list">
+            <li class="requirement" data-requirement="length">
+              <span class="check-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </span>
+              <span class="requirement-text">At least 8 characters</span>
+            </li>
+            <li class="requirement" data-requirement="uppercase">
+              <span class="check-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </span>
+              <span class="requirement-text">One uppercase letter (A-Z)</span>
+            </li>
+            <li class="requirement" data-requirement="lowercase">
+              <span class="check-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </span>
+              <span class="requirement-text">One lowercase letter (a-z)</span>
+            </li>
+            <li class="requirement" data-requirement="number">
+              <span class="check-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </span>
+              <span class="requirement-text">One number (0-9)</span>
+            </li>
+            <li class="requirement" data-requirement="special">
+              <span class="check-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="3"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </span>
+              <span class="requirement-text"
+                >One special character (!@#$%^&*)</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="button" class="submit-btn" id="submit-btn" disabled>
+          <span class="btn-text">Create Password</span>
+          <svg
+            class="btn-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </button>
+
+        <!-- Feedback Message (shown after submit) -->
+        <div class="feedback-message" id="feedback-message" hidden>
+          <svg
+            class="feedback-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+          </svg>
+          <span>Password created successfully!</span>
+        </div>
+      </div>
+
+      <!-- Tips Card -->
+      <div class="tips-card">
+        <h3 class="tips-title">💡 Pro Tips</h3>
+        <ul class="tips-list">
+          <li>Use a passphrase: "Coffee$Runs4Miles!"</li>
+          <li>Avoid personal info like birthdays</li>
+          <li>Never reuse passwords across sites</li>
+        </ul>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
