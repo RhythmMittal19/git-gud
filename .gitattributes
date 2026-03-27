@@ -1,0 +1,4 @@
+# Override GitHub Linguist language detection
+# CSS is styling, not the primary language of this repo
+*.css linguist-vendored
+*.html linguist-documentation
